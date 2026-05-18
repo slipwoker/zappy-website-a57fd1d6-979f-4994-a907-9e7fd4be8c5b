@@ -887,6 +887,389 @@
 }
 
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding-bottom: 70px;
+  direction: rtl;
+}
+
+/* Background Image */
+.index-hero-section .index-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Scrim Overlay */
+.index-hero-section .index-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-color: rgba(26,10,8,0.55);
+  background-image:
+    linear-gradient(to top, rgba(26,10,8,0.92) 0%, rgba(26,10,8,0.7) 40%, rgba(26,10,8,0.25) 75%, rgba(26,10,8,0.1) 100%),
+    linear-gradient(to left, rgba(26,10,8,0.5) 0%, transparent 60%);
+}
+
+/* Checkerboard Corner Decoration */
+.index-hero-section .index-hero-checker {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+  pointer-events: none;
+  background-image: repeating-conic-gradient(rgba(195,58,67,0.9) 0% 25%, transparent 0% 50%);
+  background-size: 20px 20px;
+  opacity: 0.85;
+  -webkit-mask-image: linear-gradient(to bottom-left, black 30%, transparent 80%);
+  mask-image: linear-gradient(to bottom-left, black 30%, transparent 80%);
+}
+
+/* Italian Stamp Badge */
+.index-hero-section .index-hero-stamp {
+  position: absolute;
+  bottom: 140px;
+  inset-inline-start: 60px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: rotate(-8deg);
+}
+
+/* 480 Flame Badge */
+.index-hero-section .index-hero-flame-badge {
+  position: absolute;
+  bottom: 100px;
+  inset-inline-start: 160px;
+  z-index: 10;
+  pointer-events: none;
+  transform: rotate(5deg);
+}
+
+/* Main Content */
+.index-hero-section .index-hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Eyebrow Label */
+.index-hero-section .index-hero-eyebrow {
+  display: inline-block;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  background: rgba(242,106,61,0.12);
+  border: 1px solid rgba(242,106,61,0.35);
+  padding: 6px 14px;
+  border-radius: 100px;
+  text-align: right;
+}
+
+/* H1 Headline */
+.index-hero-section .index-hero-h1 {font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-light);
+  text-align: right;
+  margin: 0;
+  display: flex;
+  flex-direction: column;}
+
+.index-hero-section .index-hero-h1-line1 {
+  color: var(--text-light);
+  display: block;
+}
+
+.index-hero-section .index-hero-h1-line2 {
+  color: var(--primary);
+  display: block;
+  position: relative;
+}
+
+.index-hero-section .index-hero-h1-line2::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  inset-inline-end: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to left, var(--primary), transparent);
+  border-radius: 2px;
+}
+
+/* Subtitle */
+.index-hero-section .index-hero-subtitle {
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(248,248,248,0.88);
+  text-align: right;
+  max-width: 520px;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(26,10,8,0.7);
+}
+
+/* CTA Buttons */
+.index-hero-section .index-hero-ctas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+.index-hero-section .index-hero-btn-wolt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 8px 32px rgba(195,58,67,0.45);
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  letter-spacing: 0.01em;
+}
+
+.index-hero-section .index-hero-btn-wolt:hover {
+  background: #a82e36;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(195,58,67,0.55);
+  color: #fff;
+}
+
+.index-hero-section .index-hero-btn-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-light);
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(248,248,248,0.7);
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.07);
+}
+
+.index-hero-section .index-hero-btn-menu:hover {
+  border-color: var(--text-light);
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+  color: var(--text-light);
+}
+
+.index-hero-section .index-hero-btn-contact {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(248,248,248,0.7);
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(248,248,248,0.25);
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.index-hero-section .index-hero-btn-contact:hover {
+  color: var(--text-light);
+  border-color: rgba(248,248,248,0.5);
+  background: rgba(255,255,255,0.06);
+}
+
+/* Trust Chips */
+.index-hero-section .index-hero-trust {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.index-hero-section .index-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(248,248,248,0.85);
+  background: rgba(26,10,8,0.55);
+  border: 1px solid rgba(248,248,248,0.2);
+  padding: 6px 14px;
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.index-hero-section .index-hero-chip svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.index-hero-section .index-hero-chip:hover {
+  border-color: rgba(195,58,67,0.5);
+  background: rgba(195,58,67,0.12);
+}
+
+/* Bottom Wave Divider */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── RESPONSIVE: TABLET ─── */
+@media (max-width: 1024px) {
+  .index-hero-section .index-hero-stamp {
+    inset-inline-start: 30px;
+    bottom: 130px;
+    width: 100px;
+    height: 100px;
+  }
+  .index-hero-section .index-hero-flame-badge {
+    inset-inline-start: 120px;
+    bottom: 90px;
+    width: 84px;
+    height: 84px;
+  }
+}
+
+/* ─── RESPONSIVE: MOBILE ─── */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100svh;
+    align-items: flex-end;
+  }
+
+  .index-hero-section .index-hero-content {
+    padding: 100px 16px 50px;
+    gap: 16px;
+  }
+
+  .index-hero-section .index-hero-h1 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .index-hero-section .index-hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .index-hero-section .index-hero-ctas {
+    gap: 10px;
+  }
+
+  .index-hero-section .index-hero-btn-wolt {
+    padding: 13px 22px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .index-hero-section .index-hero-btn-menu {
+    padding: 11px 20px;
+    font-size: 0.9rem;
+  }
+
+  .index-hero-section .index-hero-btn-contact {
+    padding: 11px 16px;
+    font-size: 0.88rem;
+  }
+
+  .index-hero-section .index-hero-trust {
+    gap: 8px;
+  }
+
+  .index-hero-section .index-hero-chip {
+    font-size: 0.78rem;
+    padding: 5px 11px;
+  }
+
+  .index-hero-section .index-hero-stamp {
+    position: static;
+    display: none;
+  }
+
+  .index-hero-section .index-hero-flame-badge {
+    position: static;
+    display: none;
+  }
+
+  .index-hero-section .index-hero-checker {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
+@media (max-width: 768px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
+}
+
+/* ZAPPY_POSTGEN_GUARD_HERO_TYPO:בית-hero (index-hero) — stripped 1 jarring hero headline effect(s) */
+
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -1447,11 +1830,9 @@
 </script>
   
   <main id="main">
-    <section data-band-index="0" id="hero" class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
   <!-- Background Image -->
-  <div class="index-hero-bg">
-    <img loading="eager" fetchpriority="high" data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Premium Neapolitan pizza on a rustic wooden board, close-up shot with warm golden culinary lighting, bubbling mozzarella cheese, charred leopard-spotted crust edges, fresh basil leaves, drizzle of olive oil, rich tomato sauce, steam rising from the pizza, dark moody background with warm amber highlights, Italian pizzeria atmosphere, no pepperoni no bacon no meat, food photography style, shallow depth of field, magazine quality, burgundy and cream color tones" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="פיצה נפוליטנית פרימיום של פיצאדלה" data-hero-background="true" data-element-type="image" data-element-id="img-1779126644097-jxq04727s">
-  </div>
+  <div class="index-hero-bg" style="background-image: url('assets/site-index-hero-image-1.webp'); background-size: cover; background-position: center;"></div>
 
   <!-- Scrim Overlay -->
   <div class="index-hero-scrim" aria-hidden="true"></div>
@@ -1461,67 +1842,77 @@
 
   <!-- Italian Stamp Badge -->
   <div class="index-hero-stamp" aria-hidden="true">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="54" fill="none" stroke="#C33A43" stroke-width="2" stroke-dasharray="4 3"></circle>
-      <circle cx="60" cy="60" r="46" fill="rgba(32,24,21,0.82)" stroke="#C33A43" stroke-width="1"></circle>
-      <path id="stamp-arc" d="M 20,60 A 40,40 0 1,1 100,60" fill="none"></path>
-      <text font-size="9" font-family="Heebo, sans-serif" font-weight="700" fill="#F8F8F8" letter-spacing="2">
-        <textPath href="#stamp-arc" startOffset="8%">• פיצאדלה • PIZZADELLA •</textPath>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+      <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(248,248,248,0.85)" stroke-width="2.5" stroke-dasharray="4 3"></circle>
+      <circle cx="60" cy="60" r="44" fill="rgba(32,24,21,0.7)" stroke="rgba(248,248,248,0.6)" stroke-width="1.5"></circle>
+      <text font-family="Bebas Neue, sans-serif" font-size="8" fill="rgba(248,248,248,0.9)" letter-spacing="3">
+        <textPath href="#stamp-circle-path">פיצאדלה • PIZZADELLA • NAPOLI •</textPath>
       </text>
-      <text x="60" y="56" text-anchor="middle" font-size="11" font-family="Heebo, sans-serif" font-weight="700" fill="#C33A43" letter-spacing="1">NAPOLI</text>
-      <text x="60" y="70" text-anchor="middle" font-size="8" font-family="Heebo, sans-serif" fill="#F8F8F8">STYLE</text>
-      <text x="60" y="82" text-anchor="middle" font-size="7" font-family="Heebo, sans-serif" fill="#F26A3D">✦ 1 ✦</text>
+      <defs>
+        <path id="stamp-circle-path" d="M60,14 a46,46 0 1,1 -0.01,0 Z"></path>
+      </defs>
+      <text x="60" y="54" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="13" fill="#C33A43" letter-spacing="1">AUTENTICA</text>
+      <text x="60" y="70" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="10" fill="rgba(248,248,248,0.85)" letter-spacing="2">PIZZA</text>
+      <text x="60" y="83" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="8" fill="rgba(248,248,248,0.65)" letter-spacing="1">NAPOLETANA</text>
     </svg>
   </div>
 
-  <!-- Content Overlay -->
-  <div class="index-hero-content-wrap">
-    <div class="index-hero-content">
+  <!-- 480 Degrees Badge -->
+  <div class="index-hero-flame-badge" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+      <circle cx="50" cy="50" r="46" fill="rgba(32,24,21,0.92)" stroke="rgba(195,58,67,0.7)" stroke-width="2"></circle>
+      <text x="50" y="44" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="22" fill="#C33A43" letter-spacing="1">480°</text>
+      <text x="50" y="58" text-anchor="middle" font-family="Heebo, sans-serif" font-size="8" fill="rgba(248,248,248,0.8)" letter-spacing="0.5">נאפולי</text>
+      <text x="50" y="70" text-anchor="middle" font-family="Heebo, sans-serif" font-size="7" fill="rgba(248,248,248,0.6)">בתנור אבן</text>
+    </svg>
+  </div>
 
-      <!-- Eyebrow label -->
-      <p class="zappy-editable"><span class="index-hero-eyebrow">פיצרייה בוטיק ישראלית-איטלקית</span>
+  <!-- Main Content -->
+  <div class="index-hero-content">
+    <div class="index-hero-eyebrow">פיצרייה בוטיק ישראלית-איטלקית</div>
 
-      </p><!-- H1 -->
-      <h1 class="index-hero-h1">יותר מסתם פיצה.<br><span class="index-hero-h1-accent" style="color: rgb(248, 248, 248) !important;">זו חוויה.</span></h1>
+    <h1 class="index-hero-h1">
+      <span class="index-hero-h1-line1">יותר מסתם פיצה.</span>
+      <span class="index-hero-h1-line2">זו חוויה.</span>
+    </h1>
 
-      <!-- Supporting subtitle -->
-      <h3 class="index-hero-subtitle">פיצות נפוליטניות אותנטיות מבצק מחמצת, עם מרכיבים פרימיום — ומשלוח מהיר עד אליך.</h3>
+    <h3 class="index-hero-subtitle">פיצות נפוליטניות אותנטיות מבצק מחמצת, עם מרכיבים פרימיום — ומשלוח מהיר עד אליך.</h3>
 
-      <!-- CTA Buttons -->
-      <div class="index-hero-ctas" style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;">
-        <a href="https://wolt.com" target="_blank" rel="noopener noreferrer" class="index-hero-btn-primary btn btn-primary" data-element-type="button" data-element-id="btn-1779126644092-0w49xtgod" data-native-element="true" style="outline: none; border-color: rgb(77, 145, 234) !important; color: rgb(255, 255, 255) !important; background-color: rgb(77, 145, 234) !important; background-image: none !important;">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-          להזמנה עכשיו ב-Wolt
-        </a>
-        
+    <!-- CTA Buttons -->
+    <div class="index-hero-ctas">
+      <a href="https://wolt.com" target="_blank" rel="noopener noreferrer" class="index-hero-btn-wolt">
+        <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"></path></svg>
+        להזמנה עכשיו ב-Wolt
+      </a>
+      <a href="/menu" class="index-hero-btn-menu">הצג תפריט</a>
+      <a href="/contact" class="index-hero-btn-contact">צור קשר</a>
+    </div>
+
+    <!-- Trust Chips -->
+    <div class="index-hero-trust">
+      <div class="index-hero-chip">
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-5h2V7h-2v8zm0 4h2v-2h-2v2z"></path></svg>
+        בצק מחמצת
       </div>
-
-      <!-- Trust Cues -->
-      <div class="index-hero-trust">
-        <span class="index-hero-trust-chip">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          בצק מחמצת אותנטי
-        </span>
-        <span class="index-hero-trust-chip">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          מרכיבים פרימיום
-        </span>
-        <span class="index-hero-trust-chip">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          משלוח מהיר
-        </span>
-        <span class="index-hero-trust-chip">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          אפוי ב-480 מעלות
-        </span>
+      <div class="index-hero-chip">
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"></path></svg>
+        מרכיבים פרימיום
+      </div>
+      <div class="index-hero-chip">
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"></path></svg>
+        משלוח מהיר
+      </div>
+      <div class="index-hero-chip">
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 0.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"></path></svg>
+        480 מעלות
       </div>
     </div>
   </div>
 
-  <!-- Bottom Divider -->
+  <!-- Bottom Wave Divider -->
   <div class="index-hero-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,90 L0,52 Q80,38 180,48 T380,42 Q480,36 560,46 T740,40 Q840,34 940,44 T1100,38 Q1150,42 1200,36 L1200,90 Z" fill="var(--bg-light)"></path>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,70 L0,38 Q100,22 200,35 T400,28 Q500,20 600,32 T800,26 Q900,18 1000,30 T1200,24 L1200,70 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
@@ -1628,7 +2019,7 @@
           </li>
         </ul>
         <div class="menu-card-image">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1779127685081-k2l7xjcnq" data-element-type="image" data-zappy-zoom-wrapper-width="375px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 375px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="home-menu-image-1" data-context="Authentic Neapolitan pizza fresh out of a wood-fired oven at 480 degrees, with golden charred crust, melted mozzarella, and fresh basil on a marble surface, warm Italian restaurant lighting, overhead shot" width="400" height="220" src="/assets/image-1779127748681-caxyc0.webp?v=1779127751237" alt="פיצה נפוליטנית מהתנור" data-zappy-editable-image="true" style="object-fit: cover; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px; display: block; object-position: 50% 33% !important; margin: 0px !important; left: -2% !important; top: -31.1796% !important; width: 104% !important; height: 162.359% !important; max-width: none !important; max-height: none !important;" data-element-type="image" data-element-id="img-1779127685081-k2l7xjcnq" data-zappy-zoom="1.04" data-zappy-original-width="374.6750183105469" data-zappy-original-height="180" data-zappy-object-position="50% 33%"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1779127685081-k2l7xjcnq" data-element-type="image" data-zappy-zoom-wrapper-width="375px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 375px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="home-menu-image-1" data-context="Authentic Neapolitan pizza fresh out of a wood-fired oven at 480 degrees, with golden charred crust, melted mozzarella, and fresh basil on a marble surface, warm Italian restaurant lighting, overhead shot" width="400" height="220" src="/assets/image-1779127748681-caxyc0.webp?v=1779127751237" alt="פיצה נפוליטנית מהתנור" style="object-fit: cover; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px; display: block; object-position: 50% 33% !important; margin: 0px !important; left: -2% !important; top: -31.1796% !important; width: 104% !important; height: 162.359% !important; max-width: none !important; max-height: none !important;" data-element-type="image" data-element-id="img-1779127685081-k2l7xjcnq" data-zappy-zoom="1.04" data-zappy-original-width="374.6750183105469" data-zappy-original-height="180" data-zappy-object-position="50% 33%"></div>
         </div>
       </div>
 
@@ -1662,7 +2053,7 @@
           </li>
         </ul>
         <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-2" data-context="Two Neapolitan pizzas side by side on a wooden board, one margherita with fresh basil, one with roasted vegetables, combo deal presentation, warm golden restaurant lighting, top-down food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-2%3C/text%3E%3C/svg%3E" alt="מבצעי פיצאגרילים" data-zappy-editable-image="true" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-lsivq89ki">
+          <img data-placeholder="home-menu-image-2" data-context="Two Neapolitan pizzas side by side on a wooden board, one margherita with fresh basil, one with roasted vegetables, combo deal presentation, warm golden restaurant lighting, top-down food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-2%3C/text%3E%3C/svg%3E" alt="מבצעי פיצאגרילים" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-lsivq89ki">
         </div>
       </div>
 
@@ -1748,7 +2139,7 @@
         </ul>
         <p class="category-note-addon">תוספת מוצרלה ₪</p>
         <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-3" data-context="Fresh handmade Italian pasta in a creamy mushroom sauce, garnished with fresh herbs and parmesan, served in a rustic ceramic bowl, warm restaurant lighting, close-up food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-3%3C/text%3E%3C/svg%3E" alt="פסטה טרייה" data-zappy-editable-image="true" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-su7wkb3ln">
+          <img data-placeholder="home-menu-image-3" data-context="Fresh handmade Italian pasta in a creamy mushroom sauce, garnished with fresh herbs and parmesan, served in a rustic ceramic bowl, warm restaurant lighting, close-up food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-3%3C/text%3E%3C/svg%3E" alt="פסטה טרייה" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-su7wkb3ln">
         </div>
       </div>
 
@@ -1819,7 +2210,7 @@
           </div>
         </div>
         <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-4" data-context="Chocolate pizza dessert with Nutella, mixed nuts, and colorful marshmallows on a wooden pizza board, indulgent dessert photography, warm moody lighting, close-up overhead shot" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-4%3C/text%3E%3C/svg%3E" alt="מתנקים - פיצה שוקולד" data-zappy-editable-image="true" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-kyan3kvdy">
+          <img data-placeholder="home-menu-image-4" data-context="Chocolate pizza dessert with Nutella, mixed nuts, and colorful marshmallows on a wooden pizza board, indulgent dessert photography, warm moody lighting, close-up overhead shot" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-4%3C/text%3E%3C/svg%3E" alt="מתנקים - פיצה שוקולד" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-kyan3kvdy">
         </div>
       </div>
 
@@ -1855,11 +2246,11 @@
     <!-- Food photography row -->
     <div class="menu-photo-strip">
       <div class="photo-strip-item">
-        <img data-placeholder="home-menu-image-5" data-context="Neapolitan pizza with burrata cheese, cherry tomatoes, fresh basil and balsamic glaze drizzle, shot from above on dark slate surface, Italian restaurant premium food photography" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-5%3C/text%3E%3C/svg%3E" alt="פיצה בוראטה" data-zappy-editable-image="true" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-ufe5dniob">
+        <img data-placeholder="home-menu-image-5" data-context="Neapolitan pizza with burrata cheese, cherry tomatoes, fresh basil and balsamic glaze drizzle, shot from above on dark slate surface, Italian restaurant premium food photography" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-5%3C/text%3E%3C/svg%3E" alt="פיצה בוראטה" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-ufe5dniob">
         <div class="photo-strip-label">פיצה בוראטה</div>
       </div>
       <div class="photo-strip-item">
-        <img data-placeholder="home-menu-image-6" data-context="Fresh Italian salad with quinoa, greens, cherry tomatoes, and white cheese in a ceramic bowl, vibrant colors, natural food photography, modern Israeli-Italian restaurant setting" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-6%3C/text%3E%3C/svg%3E" alt="סלטים טריים" data-zappy-editable-image="true" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-xrvfax1wx">
+        <img data-placeholder="home-menu-image-6" data-context="Fresh Italian salad with quinoa, greens, cherry tomatoes, and white cheese in a ceramic bowl, vibrant colors, natural food photography, modern Israeli-Italian restaurant setting" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-6%3C/text%3E%3C/svg%3E" alt="סלטים טריים" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-xrvfax1wx">
         <div class="photo-strip-label">סלטים טריים</div>
       </div>
     </div>
@@ -2412,12 +2803,12 @@
       <!-- Column 4: Hours -->
       <div class="footer-col footer-hours">
         <h3 class="footer-heading">שעות פעילות</h3>
-        <ul class="hours-list" style=""><li style="justify-content: flex-start; width: 100%; margin-left: 0px; margin-right: 0px; text-align: right;"><a href="/" style="outline: none;"><span class="time">
+        <ul class="hours-list" ><li style="justify-content: flex-start; width: 100%; margin-left: 0px; margin-right: 0px; text-align: right;"><a href="/" style="outline: none;"><span class="time">
 
 ראשון - חמישי
 
-12:00 – 23:00</span></a></li><li><a href="/" style=""><span style="font-size: 13.12px; background-color: rgba(255, 255, 255, 0.05);"><b>מוצ''ש-21:00-23:30</b></span></a></li></ul>
-        <div class="footer-badge hours-badge" style="">
+12:00 – 23:00</span></a></li><li><a href="/" ><span style="font-size: 13.12px; background-color: rgba(255, 255, 255, 0.05);"><b>מוצ''ש-21:00-23:30</b></span></a></li></ul>
+        <div class="footer-badge hours-badge" >
           <span class="badge-icon"><i class="fas fa-motorcycle" data-element-type="icon" data-element-id="icon-1779126196882-bt029hi25" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
           <span>משלוחים זמינים</span>
         </div>
