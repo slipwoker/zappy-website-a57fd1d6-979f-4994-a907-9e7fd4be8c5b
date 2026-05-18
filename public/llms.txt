@@ -28,7 +28,9 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- (No contact details configured yet.)
+- Phone: 04-8747011
+- Phone (tel): tel:048747011
+- Address: הכרמל 1, מתחם דוד, אור עקיבא
 
 ### Contact form
 - URL: https://example.com
@@ -39,7 +41,7 @@ Information about WCAG compliance and accessibility features.
   - `name` (text, required)
   - `email` (email, required)
   - `phone` (tel)
-  - `message` (textarea)
+  - `message` (textarea, required)
   - `privacy_consent` (checkbox, required)
 
 ---
