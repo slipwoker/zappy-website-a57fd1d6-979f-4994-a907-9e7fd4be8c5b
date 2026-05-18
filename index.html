@@ -253,640 +253,7 @@
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
 
-<style data-zappy-section-v2-css="true">
-/* V2 Regenerated Section CSS */
-.home-menu-section {
-  direction: rtl;
-  background-color: #1A0A08;
-  background-image:
-    repeating-linear-gradient(45deg, rgba(195,58,67,0.03) 0px, rgba(195,58,67,0.03) 10px, transparent 10px, transparent 20px),
-    linear-gradient(160deg, #201815 0%, #1A0A08 60%, #160806 100%);
-  color: var(--text-light);
-  padding: 80px 0 0;
-  position: relative;
-  overflow: visible;
-  font-family: 'Heebo', 'Assistant', sans-serif;
-}
 
-/* Decorative checker corner */
-.home-menu-section .menu-checker-decor {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 80px;
-  height: 80px;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: 0;
-  aria-hidden: true;
-}
-
-/* Container */
-.home-menu-section .menu-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px 60px;
-  position: relative;
-  z-index: 1;
-}
-
-/* ── HEADER ── */
-.home-menu-section .menu-header {
-  text-align: center;
-  margin-bottom: 56px;
-  position: relative;
-}
-
-.home-menu-section .menu-badge {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--text-light);
-  font-family: 'Heebo', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 6px 18px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-}
-
-.home-menu-section .menu-title {
-  font-family: 'Bebas Neue', 'Heebo', sans-serif;
-  font-size: clamp(2.6rem, 6vw, 4.5rem);
-  font-weight: 700;
-  color: var(--text-light);
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  margin: 0 0 16px;
-}
-
-.home-menu-section .menu-subtitle {
-  font-size: 1rem;
-  color: #C2A898;
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  text-align: center;
-}
-
-.home-menu-section .menu-kosher-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: transparent;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 5px 14px;
-  border-radius: 100px;
-  letter-spacing: 0.06em;
-}
-
-/* ── MENU GRID ── */
-.home-menu-section .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
-  direction: rtl;
-}
-
-/* ── CARD BASE ── */
-.home-menu-section .menu-card {
-  background: #F5F0E8;
-  border-radius: 16px;
-  padding: 0;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(26,10,8,0.22);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.home-menu-section .menu-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(26,10,8,0.32);
-}
-
-.home-menu-section .menu-card-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  padding: 20px 20px 12px;
-  border-bottom: 2px solid rgba(195,58,67,0.12);
-}
-
-.home-menu-section .category-icon {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
-.home-menu-section .category-title {
-  font-family: 'Bebas Neue', 'Heebo', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 0.04em;
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* ── ITEMS LIST ── */
-.home-menu-section .menu-items-list {
-  list-style: none;
-  margin: 0;
-  padding: 12px 20px;
-  flex: 1;
-}
-
-.home-menu-section .menu-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(195,58,67,0.1);
-}
-
-.home-menu-section .menu-item:last-child {
-  border-bottom: none;
-}
-
-.home-menu-section .item-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  text-align: right;
-}
-
-.home-menu-section .item-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #201815;
-  line-height: 1.3;
-}
-
-.home-menu-section .item-desc {
-  font-size: 0.78rem;
-  color: #6E625C;
-  line-height: 1.4;
-}
-
-.home-menu-section .item-price {
-  font-family: 'Bebas Neue', 'Heebo', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--primary);
-  white-space: nowrap;
-  min-width: 32px;
-  text-align: start;
-  padding-inline-start: 4px;
-}
-
-/* ── CARD IMAGE ── */
-.home-menu-section .menu-card-image {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  margin-top: auto;
-  flex-shrink: 0;
-}
-
-.home-menu-section .menu-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.home-menu-section .menu-card:hover .menu-card-image img {
-  transform: scale(1.04);
-}
-
-/* ── DEALS CARD ── */
-.home-menu-section .card-deals {
-  background: linear-gradient(145deg, #C33A43 0%, #a02830 100%);
-  border: none;
-}
-
-.home-menu-section .card-deals .menu-card-header {
-  border-bottom-color: rgba(255,255,255,0.2);
-}
-
-.home-menu-section .card-deals .category-title {
-  color: #fff;
-}
-
-.home-menu-section .card-deals .item-name {
-  color: #fff;
-}
-
-.home-menu-section .card-deals .item-desc {
-  color: rgba(255,255,255,0.75);
-}
-
-.home-menu-section .card-deals .menu-item {
-  border-bottom-color: rgba(255,255,255,0.15);
-}
-
-.home-menu-section .deal-price {
-  color: #FFF3B0 !important;
-  font-size: 1.3rem !important;
-}
-
-.home-menu-section .deals-ribbon {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: #FFF3B0;
-  color: #C33A43;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 4px 10px;
-  border-radius: 100px;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-/* ── PASTA CARD NOTES ── */
-.home-menu-section .category-note {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #201815;
-  margin: 0 20px 2px;
-  text-align: right;
-}
-
-.home-menu-section .category-note-sm {
-  font-size: 0.78rem;
-  color: #6E625C;
-  margin: 0 20px 8px;
-  text-align: right;
-  line-height: 1.5;
-}
-
-.home-menu-section .category-note-addon {
-  font-size: 0.8rem;
-  color: var(--primary);
-  font-weight: 600;
-  margin: 4px 20px 12px;
-  text-align: right;
-}
-
-/* ── DESSERT TOPPINGS ── */
-.home-menu-section .dessert-toppings {
-  padding: 8px 20px 16px;
-}
-
-.home-menu-section .toppings-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #6E625C;
-  margin-bottom: 8px;
-  text-align: right;
-}
-
-.home-menu-section .toppings-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: flex-end;
-}
-
-.home-menu-section .topping-tag {
-  background: rgba(195,58,67,0.1);
-  color: var(--primary);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 100px;
-  border: 1px solid rgba(195,58,67,0.2);
-  white-space: nowrap;
-}
-
-/* ── EXTRAS CARD ── */
-.home-menu-section .extras-desc {
-  font-size: 0.82rem;
-  color: #6E625C;
-  line-height: 1.6;
-  padding: 12px 20px 8px;
-  text-align: right;
-  margin: 0;
-}
-
-.home-menu-section .extras-pricing {
-  padding: 8px 20px 20px;
-}
-
-.home-menu-section .extra-tier {
-  background: rgba(195,58,67,0.06);
-  border-inline-start: 3px solid var(--primary);
-  padding: 8px 12px;
-  border-radius: 0 6px 6px 0;
-  margin-bottom: 8px;
-}
-
-.home-menu-section .extra-tier-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #201815;
-  display: block;
-  text-align: right;
-}
-
-.home-menu-section .price-tiers {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-  justify-content: flex-end;
-}
-
-.home-menu-section .price-tier {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 8px;
-  padding: 8px 16px;
-  min-width: 60px;
-}
-
-.home-menu-section .tier-price {
-  font-family: 'Bebas Neue', 'Heebo', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-}
-
-.home-menu-section .tier-label {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.8);
-  margin-top: 2px;
-}
-
-/* ── PHOTO STRIP ── */
-.home-menu-section .menu-photo-strip {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 0;
-}
-
-.home-menu-section .photo-strip-item {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  height: 260px;
-  box-shadow: 0 8px 32px rgba(26,10,8,0.3);
-}
-
-.home-menu-section .photo-strip-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.home-menu-section .photo-strip-item:hover img {
-  transform: scale(1.05);
-}
-
-.home-menu-section .photo-strip-label {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: linear-gradient(to top, rgba(26,10,8,0.85) 0%, transparent 100%);
-  color: var(--text-light);
-  font-family: 'Bebas Neue', 'Heebo', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 24px 20px 16px;
-  text-align: right;
-  letter-spacing: 0.04em;
-}
-
-/* ── FOOTER BAR ── */
-.home-menu-section .menu-footer-bar {
-  background: linear-gradient(90deg, #C33A43 0%, #a02830 100%);
-  padding: 16px 24px;
-  margin-top: 0;
-}
-
-.home-menu-section .menu-footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-  direction: rtl;
-}
-
-.home-menu-section .footer-info-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.home-menu-section .footer-info-item i {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.home-menu-section .footer-divider {
-  color: rgba(255,255,255,0.4);
-  font-size: 1rem;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .home-menu-section .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .home-menu-section {
-    padding-top: 100px;
-  }
-
-  .home-menu-section .menu-container {
-    padding: 0 16px 40px;
-  }
-
-  .home-menu-section .menu-header {
-    margin-bottom: 36px;
-  }
-
-  .home-menu-section .menu-title {
-    font-size: 2.4rem;
-  }
-
-  .home-menu-section .menu-subtitle {
-    font-size: 0.92rem;
-  }
-
-  .home-menu-section .menu-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
-  }
-
-  .home-menu-section .menu-card-image {
-    height: 160px;
-  }
-
-  .home-menu-section .menu-photo-strip {
-    grid-template-columns: 1fr !important;
-    gap: 14px;
-  }
-
-  .home-menu-section .photo-strip-item {
-    height: 200px;
-  }
-
-  .home-menu-section .menu-footer-inner {
-    gap: 12px 16px;
-  }
-
-  .home-menu-section .footer-divider {
-    display: none;
-  }
-
-  .home-menu-section .menu-checker-decor {
-    width: 50px;
-    height: 50px;
-    top: 12px;
-    right: 12px;
-  }
-
-  .home-menu-section .price-tiers {
-    justify-content: flex-start;
-  }
-
-  .home-menu-section .toppings-grid {
-    justify-content: flex-start;
-  }
-}
-/* ZAPPY_POSTGEN_GUARD_FAITHFUL_LAYOUT:Home-menu (home-menu) */
-[data-layout-spec="Home-menu"] .menu-headline,
-[data-layout-spec="Home-menu"] .home-menu-headline,
-[data-layout-spec="Home-menu"] .home-menu-title,
-[data-layout-spec="Home-menu"] .home-menu-section__title,
-[data-layout-spec="Home-menu"] h2[class*="headline"],
-[data-layout-spec="Home-menu"] h2[class*="menu-title"] {
-  white-space: nowrap !important;
-  overflow-wrap: normal !important;
-  word-break: keep-all !important;
-  width: max-content !important;
-  max-width: min(100%, 12ch) !important;
-  line-height: 0.86 !important;
-  position: relative !important;
-  z-index: 4 !important;
-}
-[data-layout-spec="Home-menu"] .home-menu-headline-col,
-[data-layout-spec="Home-menu"] .home-menu-section__copy,
-[data-layout-spec="Home-menu"] .home-menu-left,
-[data-layout-spec="Home-menu"] [class*="menu"][class*="headline-col"],
-[data-layout-spec="Home-menu"] [class*="menu"][class*="copy"] { min-width: 0 !important; max-width: min(36ch, 28%) !important; }
-[data-layout-spec="Home-menu"] .home-menu-container,
-[data-layout-spec="Home-menu"] .home-menu-section__container,
-[data-layout-spec="Home-menu"] .menu-container,
-[data-layout-spec="Home-menu"] [class*="menu-container"] { display: grid !important; grid-template-columns: minmax(0, max-content) minmax(0, 1fr) !important; gap: clamp(2rem, 5vw, 4rem) !important; align-items: start !important; overflow: visible !important; }
-[data-layout-spec="Home-menu"] .menu-accent-line,
-[data-layout-spec="Home-menu"] .home-menu-subhead,
-[data-layout-spec="Home-menu"] .home-menu-subheadline,
-[data-layout-spec="Home-menu"] .menu-accent-line .font-accent,
-[data-layout-spec="Home-menu"] .home-menu-subhead .font-accent,
-[data-layout-spec="Home-menu"] .home-menu-subheadline.font-accent,
-[data-layout-spec="Home-menu"] .home-menu-subheadline .font-accent {
-  font-family: var(--accent-font, "Permanent Marker", "Bebas Neue", cursive) !important;
-  color: var(--primary, #ef3b24) !important;
-  font-size: clamp(2rem, 3.8vw, 3.8rem) !important;
-  line-height: 0.9 !important;
-  letter-spacing: -0.02em !important;
-  text-transform: uppercase !important;
-  white-space: nowrap !important;
-  overflow-wrap: normal !important;
-  word-break: keep-all !important;
-  position: relative !important;
-  z-index: 4 !important;
-}
-[data-layout-spec="Home-menu"] .menu-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  grid-auto-rows: auto !important;
-  align-items: start !important;
-}
-[data-layout-spec="Home-menu"] .menu-grid > * { min-width: 0 !important; max-width: 100% !important; }
-[data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-row: 1 !important; align-self: stretch !important; min-width: 0 !important; max-width: 100% !important; }
-@media (min-width: 1181px) {
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(1) { grid-column: 1 !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(2) { grid-column: 2 !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(3) { grid-column: 3 !important; }
-}
-[data-layout-spec="Home-menu"] .deco-asset { max-width: min(var(--deco-w), 24vw) !important; }
-@media (max-width: 1180px) and (min-width: 901px) {
-  [data-layout-spec="Home-menu"] .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; grid-auto-flow: row !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-row: auto !important; grid-column: auto !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) img,
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) [class*="img-wrap"] img,
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) picture img { width: 100% !important; max-width: 100% !important; height: auto !important; min-width: 0 !important; display: block !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) [class*="img-wrap"],
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) picture { width: 100% !important; min-width: 0 !important; max-width: 100% !important; }
-}
-@media (max-width: 900px) {
-  [data-layout-spec="Home-menu"] .home-menu-section__container,
-  [data-layout-spec="Home-menu"] .home-menu-container,
-  [data-layout-spec="Home-menu"] .menu-container,
-  [data-layout-spec="Home-menu"] [class*="menu"][class*="container"] { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: clamp(2rem, 6vw, 3.5rem) !important; overflow: visible !important; }
-  [data-layout-spec="Home-menu"] .home-menu-section__copy,
-  [data-layout-spec="Home-menu"] .home-menu-left,
-  [data-layout-spec="Home-menu"] .home-menu-headline-col,
-  [data-layout-spec="Home-menu"] .menu-intro,
-  [data-layout-spec="Home-menu"] [class*="menu"][class*="copy"],
-  [data-layout-spec="Home-menu"] [class*="menu"][class*="intro"],
-  [data-layout-spec="Home-menu"] [class*="menu"][class*="headline-col"] { max-width: 100% !important; width: 100% !important; min-width: 0 !important; grid-column: 1 !important; grid-row: auto !important; }
-  [data-layout-spec="Home-menu"] .home-menu-title,
-  [data-layout-spec="Home-menu"] .home-menu-headline,
-  [data-layout-spec="Home-menu"] .menu-headline { max-width: 100% !important; width: 100% !important; text-align: center !important; }
-  [data-layout-spec="Home-menu"] .home-menu-cards,
-  [data-layout-spec="Home-menu"] .home-menu-cards-wrap,
-  [data-layout-spec="Home-menu"] .home-menu-cards-grid,
-  [data-layout-spec="Home-menu"] .menu-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; grid-auto-flow: row !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; overflow: visible !important; }
-  [data-layout-spec="Home-menu"] :is(article,
-[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-column: 1 !important; grid-row: auto !important; width: 100% !important; min-width: 0 !important; max-width: 100% !important; transform: none !important; }
-  [data-layout-spec="Home-menu"] .home-menu-card > *,
-  [data-layout-spec="Home-menu"] [class*="menu-card"] > * { min-width: 0 !important; max-width: 100% !important; }
-  [data-layout-spec="Home-menu"] .deco-asset { display: none !important; }
-}
-
-</style>
 
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
@@ -1268,6 +635,635 @@
 }
 
 /* ZAPPY_POSTGEN_GUARD_HERO_TYPO:בית-hero (index-hero) — stripped 1 jarring hero headline effect(s) */
+
+</style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.home-menu-section {
+  direction: rtl;
+  background-color: #1A0A08;
+  background-image:
+    radial-gradient(ellipse at 10% 20%, rgba(195,58,67,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(242,106,61,0.06) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(195,58,67,0.025) 0px, rgba(195,58,67,0.025) 1px, transparent 1px, transparent 28px);
+  color: var(--text-light);
+  padding: 80px 0 0;
+  position: relative;
+  overflow: visible;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+}
+
+/* ── HEADER ── */
+.home-menu-section .menu-header {
+  text-align: center;
+  padding: 0 24px 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.home-menu-section .menu-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.home-menu-section .menu-title {
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.home-menu-section .menu-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(248,248,248,0.72);
+  max-width: 560px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.home-menu-section .kosher-badge {
+  display: inline-block;
+  border: 1.5px solid rgba(195,58,67,0.6);
+  color: rgba(248,248,248,0.75);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+}
+
+/* ── GRID ── */
+.home-menu-section .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  position: relative;
+  z-index: 2;
+  direction: rtl;
+}
+
+/* ── CARDS ── */
+.home-menu-section .menu-card {
+  background: #F5F0E8;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26,10,8,0.22);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.home-menu-section .card-header-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px 12px;
+  background: rgba(195,58,67,0.08);
+  border-bottom: 2px solid rgba(195,58,67,0.15);
+}
+
+.home-menu-section .card-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.home-menu-section .card-title {
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-menu-section .card-body {
+  padding: 16px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── MENU ITEMS LIST ── */
+.home-menu-section .menu-items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-menu-section .menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(26,10,8,0.08);
+}
+
+.home-menu-section .menu-item:last-child {
+  border-bottom: none;
+}
+
+.home-menu-section .item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: right;
+  flex: 1;
+}
+
+.home-menu-section .item-name small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.home-menu-section .item-price {
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.home-menu-section .item-price.gold {
+  color: #C8960C;
+}
+
+/* ── DEALS CARD ── */
+.home-menu-section .card-deals {
+  background: linear-gradient(145deg, #C41E3A 0%, #9B1530 100%);
+}
+
+.home-menu-section .card-deals .card-header-bar {
+  background: rgba(0,0,0,0.15);
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+
+.home-menu-section .card-deals .card-title {
+  color: #fff;
+}
+
+.home-menu-section .card-deals .menu-item {
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+
+.home-menu-section .card-deals .item-name {
+  color: #fff;
+}
+
+.home-menu-section .card-deals .item-name small {
+  color: rgba(255,255,255,0.72);
+}
+
+.home-menu-section .deal-ribbon {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #FFD700;
+  color: #1A0A08;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+/* ── FOOD IMAGES INSIDE CARDS ── */
+.home-menu-section .card-food-image {
+  margin-top: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.home-menu-section .card-food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ── FRESHNESS & SAUCE ── */
+.home-menu-section .freshness-tag {
+  display: inline-block;
+  background: rgba(149,180,106,0.15);
+  color: #4a7a1e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(149,180,106,0.4);
+  margin-bottom: 4px;
+  text-align: right;
+}
+
+.home-menu-section .sauce-block {
+  background: rgba(26,10,8,0.04);
+  border-radius: 8px;
+  padding: 8px 12px;
+  border-inline-start: 3px solid var(--primary);
+}
+
+.home-menu-section .sauce-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.home-menu-section .sauce-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── DESSERT TOPPINGS ── */
+.home-menu-section .toppings-section {
+  margin-top: 4px;
+}
+
+.home-menu-section .toppings-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.home-menu-section .toppings-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.home-menu-section .tag {
+  background: rgba(195,58,67,0.1);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(195,58,67,0.2);
+  white-space: nowrap;
+}
+
+/* ── EXTRAS CARD ── */
+.home-menu-section .card-extras .extras-intro {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  text-align: right;
+}
+
+.home-menu-section .extras-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.home-menu-section .extras-items {
+  margin-top: 8px;
+}
+
+.home-menu-section .extras-tier {
+  background: rgba(26,10,8,0.05);
+  border-radius: 8px;
+  padding: 10px 12px;
+  border-inline-start: 3px solid var(--accent);
+}
+
+.home-menu-section .tier-label {
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  text-align: right;
+  display: block;
+}
+
+/* ── PHOTO STRIP ── */
+.home-menu-section .photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto 0;
+  padding: 0 24px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.home-menu-section .photo-strip-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-menu-section .photo-strip-item:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.home-menu-section .photo-strip-item:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.home-menu-section .photo-strip-img {
+  height: 260px;
+  overflow: hidden;
+}
+
+.home-menu-section .photo-strip-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.home-menu-section .photo-strip-item:hover .photo-strip-img img {
+  transform: scale(1.04);
+}
+
+.home-menu-section .photo-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(26,10,8,0.82) 0%, transparent 100%);
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  letter-spacing: 0.05em;
+  padding: 32px 18px 14px;
+  text-align: right;
+}
+
+/* ── FOOTER BAR ── */
+.home-menu-section .menu-footer-bar {
+  background: var(--primary);
+  margin-top: 0;
+  padding: 20px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.home-menu-section .footer-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.home-menu-section .footer-info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.home-menu-section .footer-info-item i {
+  color: rgba(248,248,248,0.8);
+  font-size: 0.9rem;
+}
+
+.home-menu-section .kosher-footer-badge {
+  background: rgba(255,255,255,0.15);
+  color: var(--text-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 16px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+}
+
+/* ── HOVER EFFECTS ── */
+.home-menu-section .menu-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-menu-section .menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26,10,8,0.32);
+}
+
+/* ── RESPONSIVE: 2 COLUMNS ── */
+@media (max-width: 1024px) {
+  .home-menu-section .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── RESPONSIVE: MOBILE ── */
+@media (max-width: 768px) {
+  .home-menu-section {
+    padding-top: 100px;
+  }
+
+  .home-menu-section .menu-header {
+    padding: 0 16px 36px;
+  }
+
+  .home-menu-section .menu-title {
+    font-size: 2.8rem;
+  }
+
+  .home-menu-section .menu-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px 40px;
+    gap: 16px;
+  }
+
+  .home-menu-section .photo-strip {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px 0;
+    gap: 0;
+  }
+
+  .home-menu-section .photo-strip-item:first-child {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .home-menu-section .photo-strip-item:last-child {
+    border-radius: 0 0 0 0;
+  }
+
+  .home-menu-section .photo-strip-img {
+    height: 200px;
+  }
+
+  .home-menu-section .footer-bar-inner {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .home-menu-section .deal-ribbon {
+    top: 10px;
+    left: 10px;
+  }
+
+  .home-menu-section .card-food-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-menu-section .menu-title {
+    font-size: 2.2rem;
+  }
+
+  .home-menu-section .menu-subtitle {
+    font-size: 0.9rem;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_FAITHFUL_LAYOUT:Home-menu (home-menu) */
+[data-layout-spec="Home-menu"] .menu-headline,
+[data-layout-spec="Home-menu"] .home-menu-headline,
+[data-layout-spec="Home-menu"] .home-menu-title,
+[data-layout-spec="Home-menu"] .home-menu-section__title,
+[data-layout-spec="Home-menu"] h2[class*="headline"],
+[data-layout-spec="Home-menu"] h2[class*="menu-title"] {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  width: max-content !important;
+  max-width: min(100%, 12ch) !important;
+  line-height: 0.86 !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+[data-layout-spec="Home-menu"] .home-menu-headline-col,
+[data-layout-spec="Home-menu"] .home-menu-section__copy,
+[data-layout-spec="Home-menu"] .home-menu-left,
+[data-layout-spec="Home-menu"] [class*="menu"][class*="headline-col"],
+[data-layout-spec="Home-menu"] [class*="menu"][class*="copy"] { min-width: 0 !important; max-width: min(36ch, 28%) !important; }
+[data-layout-spec="Home-menu"] .home-menu-container,
+[data-layout-spec="Home-menu"] .home-menu-section__container,
+[data-layout-spec="Home-menu"] .menu-container,
+[data-layout-spec="Home-menu"] [class*="menu-container"] { display: grid !important; grid-template-columns: minmax(0, max-content) minmax(0, 1fr) !important; gap: clamp(2rem, 5vw, 4rem) !important; align-items: start !important; overflow: visible !important; }
+[data-layout-spec="Home-menu"] .menu-accent-line,
+[data-layout-spec="Home-menu"] .home-menu-subhead,
+[data-layout-spec="Home-menu"] .home-menu-subheadline,
+[data-layout-spec="Home-menu"] .menu-accent-line .font-accent,
+[data-layout-spec="Home-menu"] .home-menu-subhead .font-accent,
+[data-layout-spec="Home-menu"] .home-menu-subheadline.font-accent,
+[data-layout-spec="Home-menu"] .home-menu-subheadline .font-accent {
+  font-family: var(--accent-font, "Permanent Marker", "Bebas Neue", cursive) !important;
+  color: var(--primary, #ef3b24) !important;
+  font-size: clamp(2rem, 3.8vw, 3.8rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+[data-layout-spec="Home-menu"] .menu-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: auto !important;
+  align-items: start !important;
+}
+[data-layout-spec="Home-menu"] .menu-grid > * { min-width: 0 !important; max-width: 100% !important; }
+[data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-row: 1 !important; align-self: stretch !important; min-width: 0 !important; max-width: 100% !important; }
+@media (min-width: 1181px) {
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(1) { grid-column: 1 !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(2) { grid-column: 2 !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]):nth-of-type(3) { grid-column: 3 !important; }
+}
+[data-layout-spec="Home-menu"] .deco-asset { max-width: min(var(--deco-w), 24vw) !important; }
+@media (max-width: 1180px) and (min-width: 901px) {
+  [data-layout-spec="Home-menu"] .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; grid-auto-flow: row !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-row: auto !important; grid-column: auto !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) img,
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) [class*="img-wrap"] img,
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) picture img { width: 100% !important; max-width: 100% !important; height: auto !important; min-width: 0 !important; display: block !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) [class*="img-wrap"],
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) picture { width: 100% !important; min-width: 0 !important; max-width: 100% !important; }
+}
+@media (max-width: 900px) {
+  [data-layout-spec="Home-menu"] .home-menu-section__container,
+  [data-layout-spec="Home-menu"] .home-menu-container,
+  [data-layout-spec="Home-menu"] .menu-container,
+  [data-layout-spec="Home-menu"] [class*="menu"][class*="container"] { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: clamp(2rem, 6vw, 3.5rem) !important; overflow: visible !important; }
+  [data-layout-spec="Home-menu"] .home-menu-section__copy,
+  [data-layout-spec="Home-menu"] .home-menu-left,
+  [data-layout-spec="Home-menu"] .home-menu-headline-col,
+  [data-layout-spec="Home-menu"] .menu-intro,
+  [data-layout-spec="Home-menu"] [class*="menu"][class*="copy"],
+  [data-layout-spec="Home-menu"] [class*="menu"][class*="intro"],
+  [data-layout-spec="Home-menu"] [class*="menu"][class*="headline-col"] { max-width: 100% !important; width: 100% !important; min-width: 0 !important; grid-column: 1 !important; grid-row: auto !important; }
+  [data-layout-spec="Home-menu"] .home-menu-title,
+  [data-layout-spec="Home-menu"] .home-menu-headline,
+  [data-layout-spec="Home-menu"] .menu-headline { max-width: 100% !important; width: 100% !important; text-align: center !important; }
+  [data-layout-spec="Home-menu"] .home-menu-cards,
+  [data-layout-spec="Home-menu"] .home-menu-cards-wrap,
+  [data-layout-spec="Home-menu"] .home-menu-cards-grid,
+  [data-layout-spec="Home-menu"] .menu-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; grid-auto-flow: row !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; overflow: visible !important; }
+  [data-layout-spec="Home-menu"] :is(article,
+[data-layout-spec="Home-menu"] [class*="card"]):has(img[data-placeholder]) { grid-column: 1 !important; grid-row: auto !important; width: 100% !important; min-width: 0 !important; max-width: 100% !important; transform: none !important; }
+  [data-layout-spec="Home-menu"] .home-menu-card > *,
+  [data-layout-spec="Home-menu"] [class*="menu-card"] > * { min-width: 0 !important; max-width: 100% !important; }
+  [data-layout-spec="Home-menu"] .deco-asset { display: none !important; }
+}
 
 </style>
     <link rel="stylesheet" href="/styles.css">
@@ -1912,367 +1908,214 @@
   <!-- Bottom Wave Divider -->
   <div class="index-hero-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,70 L0,38 Q100,22 200,35 T400,28 Q500,20 600,32 T800,26 Q900,18 1000,30 T1200,24 L1200,70 Z" fill="var(--bg-light)"></path>
+      <path d="M0,70 L0,38 Q100,22 200,35 T400,28 Q500,20 600,32 T800,26 Q900,18 1000,30 T1200,24 L1200,70 Z" fill="#1A0A08"></path>
     </svg>
   </div>
 </section>
 
 <section class="home-menu-section" data-layout-spec="Home-menu" dir="rtl" data-zappy-section="true" id="ai-section-1779126886370-vrcolie">
 
-  <!-- Decorative checkerboard corner -->
-  <div class="menu-checker-decor" aria-hidden="true">
-    <svg width="80" height="80" viewBox="0 0 80 80" data-no-icon-edit="true" aria-hidden="true">
-      <rect x="0" y="0" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="20" y="0" width="20" height="20" fill="transparent"></rect>
-      <rect x="40" y="0" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="60" y="0" width="20" height="20" fill="transparent"></rect>
-      <rect x="0" y="20" width="20" height="20" fill="transparent"></rect>
-      <rect x="20" y="20" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="40" y="20" width="20" height="20" fill="transparent"></rect>
-      <rect x="60" y="20" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="0" y="40" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="20" y="40" width="20" height="20" fill="transparent"></rect>
-      <rect x="40" y="40" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="60" y="40" width="20" height="20" fill="transparent"></rect>
-      <rect x="0" y="60" width="20" height="20" fill="transparent"></rect>
-      <rect x="20" y="60" width="20" height="20" fill="#C33A43"></rect>
-      <rect x="40" y="60" width="20" height="20" fill="transparent"></rect>
-      <rect x="60" y="60" width="20" height="20" fill="#C33A43"></rect>
-    </svg>
+  <!-- Header -->
+  <div class="menu-header">
+    <span class="menu-badge">🍕 פיצאדלה</span>
+    <h2 class="menu-title">תפריט משלוחים</h2>
+    <p class="menu-subtitle">פיצות נפוליטניות עשויות בתנור 480 מעלות, פסטות טריות, סלטים עם מרכיבים עונתיים - ועוד. אוכל איטלקי אמיתי, עם טאץ של פיצאדלה!</p>
+    <span class="kosher-badge">כשר למהדרין</span>
   </div>
 
-  <div class="menu-container">
+  <!-- Menu Grid -->
+  <div class="menu-grid">
 
-    <!-- Section Header -->
-    <div class="menu-header">
-      <div class="menu-badge">🍕 פיצאדלה</div>
-      <h2 class="menu-title">תפריט משלוחים</h2>
-      <p class="menu-subtitle">פיצות נפוליטניות עשויות בתנור 480 מעלות, פסטות טריות, סלטים עם מרכיבים עונתיים - ועוד. אוכל איטלקי אמיתי, עם טאץ של פיצאדלה!</p>
-      <div class="menu-kosher-badge">כשר למהדרין</div>
-    </div>
-
-    <!-- Menu Grid -->
-    <div class="menu-grid" data-zappy-grid-align="start">
-
-      <!-- מהתנור -->
-      <div class="menu-card card-oven" data-grid-item-index="0">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">🔥</span>
-          </p><h3 class="category-title">מהתנור</h3>
-        </div>
+    <!-- מהתנור -->
+    <div class="menu-card card-oven">
+      <div class="card-header-bar">
+        <span class="card-emoji">🔥</span>
+        <h3 class="card-title">מהתנור</h3>
+      </div>
+      <div class="card-body">
         <ul class="menu-items-list">
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצאדלה קלאסית</span>
-              <span class="item-desc">פיצה מרגריטה מבוצעת יד</span>
-            </div>
-            <span class="item-price">45</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצה קפרזה</span>
-              <span class="item-desc">מוצרלה, עגבניות, בצל, טונה, בלסאמי</span>
-            </div>
-            <span class="item-price">60</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצה ביאנקה</span>
-              <span class="item-desc">רוטב שמנת, פטריות, זיתים, מוצרלה</span>
-            </div>
-            <span class="item-price">60</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצה בוראטה</span>
-              <span class="item-desc">עגבניות שרי, בצלצלים, בוראטה, בלסאמי</span>
-            </div>
-            <span class="item-price">70</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצה מטבעות עיזים ודבש</span>
-              <span class="item-desc">עגבניות שרי, רוקט, גבס</span>
-            </div>
-            <span class="item-price">70</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">ה-פוקאצ'ה</span>
-              <span class="item-desc">פסטו, מוצרלה, עגבניות שרי, רוקט, בלסאמי</span>
-            </div>
-            <span class="item-price">32</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">לחם שום</span>
-              <span class="item-desc">תוספת אבקה ₪</span>
-            </div>
-            <span class="item-price">30</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">לחם שום פסטו</span>
-              <span class="item-desc">תוספת אבקה ₪</span>
-            </div>
-            <span class="item-price">33</span>
-          </li>
+          <li class="menu-item"><span class="item-name">פיצאדלה קלאסית<small>פיצה מרגריטה מבוצעת יד</small></span><span class="item-price">45</span></li>
+          <li class="menu-item"><span class="item-name">פיצה קפרזה<small>מוצרלה, עגבניות, בצל, טונה, בלסאמי</small></span><span class="item-price">60</span></li>
+          <li class="menu-item"><span class="item-name">פיצה ביאנקה<small>רוטב שמנת, פטריות, זיתים, מוצרלה</small></span><span class="item-price">60</span></li>
+          <li class="menu-item"><span class="item-name">פיצה בוראטה<small>עגבניות שרי, בצלצלים, בוראטה, בלסאמי</small></span><span class="item-price">70</span></li>
+          <li class="menu-item"><span class="item-name">פיצה מטבעות עיזים ודבש<small>עגבניות שרי, רוקט, גבס</small></span><span class="item-price">70</span></li>
+          <li class="menu-item"><span class="item-name">ה-פוקאצ׳ה<small>פסטו, מוצרלה, עגבניות שרי, רוקט, בלסאמי</small></span><span class="item-price">32</span></li>
+          <li class="menu-item"><span class="item-name">לחם שום<small>תוספת אבקה ₪</small></span><span class="item-price">30</span></li>
+          <li class="menu-item"><span class="item-name">לחם שום פסטו<small>תוספת אבקה ₪</small></span><span class="item-price">33</span></li>
         </ul>
-        <div class="menu-card-image">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1779127685081-k2l7xjcnq" data-element-type="image" data-zappy-zoom-wrapper-width="375px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 375px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important; padding-bottom: 0px !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-card-slot-fill="1"><img data-placeholder="home-menu-image-1" data-context="Authentic Neapolitan pizza fresh out of a wood-fired oven at 480 degrees, with golden charred crust, melted mozzarella, and fresh basil on a marble surface, warm Italian restaurant lighting, overhead shot" width="400" height="220" src="/assets/image-1779127748681-caxyc0.webp?v=1779127751237" alt="פיצה נפוליטנית מהתנור" style="object-fit: cover; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px; display: block; object-position: 50% 33% !important; margin: 0px !important; left: -2% !important; top: -31.1796% !important; width: 104% !important; height: 162.359% !important; max-width: none !important; max-height: none !important;" data-element-type="image" data-element-id="img-1779127685081-k2l7xjcnq" data-zappy-zoom="1.04" data-zappy-original-width="374.6750183105469" data-zappy-original-height="180" data-zappy-object-position="50% 33%"></div>
+        <div class="card-food-image">
+          <img alt="פיצה נפוליטנית מהתנור" src="/assets/image-1779127748681-caxyc0.webp?v=1779127751237" data-placeholder="home-menu-image-1" data-context="Authentic Neapolitan pizza fresh out of a wood-fired oven at 480 degrees, with golden charred crust, melted mozzarella, and fresh basil on a marble surface, warm Italian restaurant lighting, overhead shot" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         </div>
-      </div>
-
-      <!-- פיצאגרילים - DEALS CARD -->
-      <div class="menu-card card-deals" data-grid-item-index="1">
-        <div class="deals-ribbon">מבצע</div>
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon">⚡</span>
-          </p><h3 class="category-title">פיצאגרילים</h3>
-        </div>
-        <ul class="menu-items-list">
-          <li class="menu-item deal-item">
-            <div class="item-info">
-              <span class="item-name">דאבל פיצאדלה</span>
-              <span class="item-desc">קלאסית + שתייה</span>
-            </div>
-            <span class="item-price deal-price">95</span>
-          </li>
-          <li class="menu-item deal-item">
-            <div class="item-info">
-              <span class="item-name">טריפל פיצאדלה</span>
-              <span class="item-desc">קלאסית + שתייה</span>
-            </div>
-            <span class="item-price deal-price">130</span>
-          </li>
-          <li class="menu-item deal-item">
-            <div class="item-info">
-              <span class="item-name">פיצאדלה קלאסית + לחם שום</span>
-            </div>
-            <span class="item-price deal-price">70</span>
-          </li>
-        </ul>
-        <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-2" data-context="Two Neapolitan pizzas side by side on a wooden board, one margherita with fresh basil, one with roasted vegetables, combo deal presentation, warm golden restaurant lighting, top-down food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-2%3C/text%3E%3C/svg%3E" alt="מבצעי פיצאגרילים" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-lsivq89ki">
-        </div>
-      </div>
-
-      <!-- סלטים -->
-      <div class="menu-card card-salads" data-grid-item-index="2">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">🥗</span>
-          </p><h3 class="category-title">סלטים</h3>
-        </div>
-        <ul class="menu-items-list">
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">סלט יווני</span>
-              <span class="item-desc">אלפסון, עגבניות, שרי, גאורגה, קלאטה, בולגרית, גבז, חסה בלויי אקל סום</span>
-            </div>
-            <span class="item-price">47</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">סלט טונה</span>
-              <span class="item-desc">אלפסון, עגבניות, שרי, חסה, ביצה קשה, טונה אטומולת, בלויי אקל סום</span>
-            </div>
-            <span class="item-price">47</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">סלט קיסר</span>
-              <span class="item-desc">חסה קיסר, שאליק, רוקט, ביצה קשה, גבז סטול, קרוטונים</span>
-            </div>
-            <span class="item-price">45</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">סלט קינואה</span>
-              <span class="item-desc">קינואה, חסה, עלועים, מאווזיות, פטרוזיליה, גבז סטול, סלרי, בלויי שניה עולאית</span>
-            </div>
-            <span class="item-price">48</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">סלט קפרז'ה</span>
-              <span class="item-desc">שרי, עגבניות, רוקט, בצלצלים, גבז סטול, 3 גבינה, קרמי אוצרלה, בלסאמי, אקל שום</span>
-            </div>
-            <span class="item-price">48</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- פסטות -->
-      <div class="menu-card card-pasta" data-grid-item-index="3">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">🍝</span>
-          </p><h3 class="category-title">פסטות</h3>
-        </div>
-        <p class="category-note">פסטה 100% טרייה</p>
-        <p class="category-note">רטבים:</p>
-        <p class="category-note-sm">שמנת פטריות, שמנת, רוזה, עגבניות, שמנת פסטו</p>
-        <ul class="menu-items-list">
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פסטה פונה</span>
-            </div>
-            <span class="item-price">48</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פסטה פטוצ'יני</span>
-            </div>
-            <span class="item-price">48</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">רביולי 4 גבינות</span>
-            </div>
-            <span class="item-price">52</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">רביולי בסטה</span>
-            </div>
-            <span class="item-price">52</span>
-          </li>
-        </ul>
-        <p class="category-note-addon">תוספת מוצרלה ₪</p>
-        <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-3" data-context="Fresh handmade Italian pasta in a creamy mushroom sauce, garnished with fresh herbs and parmesan, served in a rustic ceramic bowl, warm restaurant lighting, close-up food photography" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-3%3C/text%3E%3C/svg%3E" alt="פסטה טרייה" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-su7wkb3ln">
-        </div>
-      </div>
-
-      <!-- שתייה -->
-      <div class="menu-card card-drinks" data-grid-item-index="4">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">🥤</span>
-          </p><h3 class="category-title">שתייה</h3>
-        </div>
-        <ul class="menu-items-list">
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">מים / סודה</span></div>
-            <span class="item-price">10</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">פחית</span></div>
-            <span class="item-price">10</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">מים בטעמים</span></div>
-            <span class="item-price">13</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">פיוזטי</span></div>
-            <span class="item-price">13</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">שתייה גדולה</span></div>
-            <span class="item-price">14</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info"><span class="item-name">טרופית</span></div>
-            <span class="item-price">3</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- מתנקים -->
-      <div class="menu-card card-desserts" data-grid-item-index="5">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">🍫</span>
-          </p><h3 class="category-title">מתנקים</h3>
-        </div>
-        <ul class="menu-items-list">
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">פיצה שוקולד</span>
-              <span class="item-desc">שוקולד חלב, רוטב קונצ'ר, מיקס אגוזים</span>
-            </div>
-            <span class="item-price">60</span>
-          </li>
-          <li class="menu-item" style="color: rgb(32, 24, 21) !important;">
-            <div class="item-info">
-              <span class="item-name">קוקידלה</span>
-              <span class="item-desc">עוגיית שוקולד חמה הטעמים לבחירה</span>
-            </div>
-            <span class="item-price">18</span>
-          </li>
-        </ul>
-        <div class="dessert-toppings">
-          <p class="toppings-label">תוספות לבחירה:</p>
-          <div class="toppings-grid">
-            <span class="topping-tag">מרשמלו</span>
-            <span class="topping-tag">אמסטרדם 2+</span>
-            <span class="topping-tag">פיסטוק דובאי 2+</span>
-            <span class="topping-tag">קליק</span>
-            <span class="topping-tag">סוכריות צבעוניות</span>
-          </div>
-        </div>
-        <div class="menu-card-image">
-          <img data-placeholder="home-menu-image-4" data-context="Chocolate pizza dessert with Nutella, mixed nuts, and colorful marshmallows on a wooden pizza board, indulgent dessert photography, warm moody lighting, close-up overhead shot" width="400" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-4%3C/text%3E%3C/svg%3E" alt="מתנקים - פיצה שוקולד" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-kyan3kvdy">
-        </div>
-      </div>
-
-      <!-- תוספות -->
-      <div class="menu-card card-extras" data-grid-item-index="6">
-        <div class="menu-card-header">
-          <p class="zappy-editable"><span class="category-icon" style="color: rgb(32, 24, 21) !important;">➕</span>
-          </p><h3 class="category-title">תוספות</h3>
-        </div>
-        <p class="extras-desc">זיתים ירוקים, זיתי קלמטה, בולגרית, תירס, בולגרית, עגבניות, בצל, טונה, פטריות טריות, פלפל חריף</p>
-        <div class="extras-pricing">
-          <div class="extra-tier">
-            <span class="extra-tier-label">מיוחדות 2+</span>
-          </div>
-          <div class="extra-tier">
-            <span class="extra-tier-label">ביצה קשה, קוביות בטטה, חציל קלוי, אקסטרה גבינה</span>
-          </div>
-          <div class="price-tiers">
-            <div class="price-tier">
-              <span class="tier-price">₪4</span>
-              <span class="tier-label">עד</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-price">₪7</span>
-              <span class="tier-label">עד</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end menu-grid -->
-
-    <!-- Food photography row -->
-    <div class="menu-photo-strip">
-      <div class="photo-strip-item">
-        <img data-placeholder="home-menu-image-5" data-context="Neapolitan pizza with burrata cheese, cherry tomatoes, fresh basil and balsamic glaze drizzle, shot from above on dark slate surface, Italian restaurant premium food photography" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-5%3C/text%3E%3C/svg%3E" alt="פיצה בוראטה" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-ufe5dniob">
-        <div class="photo-strip-label">פיצה בוראטה</div>
-      </div>
-      <div class="photo-strip-item">
-        <img data-placeholder="home-menu-image-6" data-context="Fresh Italian salad with quinoa, greens, cherry tomatoes, and white cheese in a ceramic bowl, vibrant colors, natural food photography, modern Israeli-Italian restaurant setting" width="600" height="400" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-6%3C/text%3E%3C/svg%3E" alt="סלטים טריים" style="object-fit: cover; object-position: center center; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px;" data-element-type="image" data-element-id="img-1779127685081-xrvfax1wx">
-        <div class="photo-strip-label">סלטים טריים</div>
       </div>
     </div>
 
-  </div><!-- end menu-container -->
+    <!-- פיצאגרילים -->
+    <div class="menu-card card-deals">
+      <div class="deal-ribbon">מבצע</div>
+      <div class="card-header-bar">
+        <span class="card-emoji">⚡</span>
+        <h3 class="card-title">פיצאגרילים</h3>
+      </div>
+      <div class="card-body">
+        <ul class="menu-items-list deals-list">
+          <li class="menu-item"><span class="item-name">דאבל פיצאדלה<small>קלאסית + שתייה</small></span><span class="item-price gold">95</span></li>
+          <li class="menu-item"><span class="item-name">טריפל פיצאדלה<small>קלאסית + שתייה</small></span><span class="item-price gold">130</span></li>
+          <li class="menu-item"><span class="item-name">פיצאדלה קלאסית + לחם שום</span><span class="item-price gold">70</span></li>
+        </ul>
+        <div class="card-food-image">
+          <img alt="מבצעי פיצאגרילים" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-2%3C/text%3E%3C/svg%3E" data-placeholder="home-menu-image-2" data-context="Two Neapolitan pizzas side by side on a wooden board, one margherita with fresh basil, one with roasted vegetables, combo deal presentation, warm golden restaurant lighting, top-down food photography" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+      </div>
+    </div>
 
-  <!-- Footer bar -->
+    <!-- סלטים -->
+    <div class="menu-card">
+      <div class="card-header-bar">
+        <span class="card-emoji">🥗</span>
+        <h3 class="card-title">סלטים</h3>
+      </div>
+      <div class="card-body">
+        <ul class="menu-items-list">
+          <li class="menu-item"><span class="item-name">סלט יווני<small>אלפסון, עגבניות, שרי, גאורגה, קלאטה, בולגרית, גבז, חסה בלויי אקל סום</small></span><span class="item-price">47</span></li>
+          <li class="menu-item"><span class="item-name">סלט טונה<small>אלפסון, עגבניות, שרי, חסה, ביצה קשה, טונה אטומולת, בלויי אקל סום</small></span><span class="item-price">47</span></li>
+          <li class="menu-item"><span class="item-name">סלט קיסר<small>חסה קיסר, שאליק, רוקט, ביצה קשה, גבז סטול, קרוטונים</small></span><span class="item-price">45</span></li>
+          <li class="menu-item"><span class="item-name">סלט קינואה<small>קינואה, חסה, עלועים, מאווזיות, פטרוזיליה, גבז סטול, סלרי, בלויי שניה עולאית</small></span><span class="item-price">48</span></li>
+          <li class="menu-item"><span class="item-name">סלט קפרז׳ה<small>שרי, עגבניות, רוקט, בצלצלים, גבז סטול, 3 גבינה, קרמי אוצרלה, בלסאמי, אקל שום</small></span><span class="item-price">48</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- פסטות -->
+    <div class="menu-card">
+      <div class="card-header-bar">
+        <span class="card-emoji">🍝</span>
+        <h3 class="card-title">פסטות</h3>
+      </div>
+      <div class="card-body">
+        <div class="freshness-tag">פסטה 100% טרייה</div>
+        <ul class="menu-items-list">
+          <li class="menu-item"><span class="item-name">פסטה פונה</span><span class="item-price">48</span></li>
+          <li class="menu-item"><span class="item-name">פסטה פטוצ׳יני</span><span class="item-price">48</span></li>
+          <li class="menu-item"><span class="item-name">רביולי 4 גבינות</span><span class="item-price">52</span></li>
+          <li class="menu-item"><span class="item-name">רביולי בסטה</span><span class="item-price">52</span></li>
+        </ul>
+        <div class="sauce-block">
+          <span class="sauce-label">רטבים:</span>
+          <span class="sauce-text">שמנת פטריות, שמנת, רוזה, עגבניות, שמנת פסטו</span>
+        </div>
+        <div class="sauce-block">
+          <span class="sauce-label">תוספת מוצרלה ₪</span>
+        </div>
+        <div class="card-food-image">
+          <img alt="פסטה טרייה" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-3%3C/text%3E%3C/svg%3E" data-placeholder="home-menu-image-3" data-context="Fresh handmade Italian pasta in a creamy mushroom sauce, garnished with fresh herbs and parmesan, served in a rustic ceramic bowl, warm restaurant lighting, close-up food photography" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+      </div>
+    </div>
+
+    <!-- שתייה -->
+    <div class="menu-card">
+      <div class="card-header-bar">
+        <span class="card-emoji">🥤</span>
+        <h3 class="card-title">שתייה</h3>
+      </div>
+      <div class="card-body">
+        <ul class="menu-items-list">
+          <li class="menu-item"><span class="item-name">מים / סודה</span><span class="item-price">10</span></li>
+          <li class="menu-item"><span class="item-name">פחית</span><span class="item-price">10</span></li>
+          <li class="menu-item"><span class="item-name">מים בטעמים</span><span class="item-price">13</span></li>
+          <li class="menu-item"><span class="item-name">פיוזטי</span><span class="item-price">13</span></li>
+          <li class="menu-item"><span class="item-name">שתייה גדולה</span><span class="item-price">14</span></li>
+          <li class="menu-item"><span class="item-name">טרופית</span><span class="item-price">3</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- מתנקים -->
+    <div class="menu-card card-desserts">
+      <div class="card-header-bar">
+        <span class="card-emoji">🍫</span>
+        <h3 class="card-title">מתנקים</h3>
+      </div>
+      <div class="card-body">
+        <ul class="menu-items-list">
+          <li class="menu-item"><span class="item-name">פיצה שוקולד<small>שוקולד חלב, רוטב קונצ׳ר, מיקס אגוזים</small></span><span class="item-price">60</span></li>
+          <li class="menu-item"><span class="item-name">קוקידלה<small>עוגיית שוקולד חמה הטעמים לבחירה</small></span><span class="item-price">18</span></li>
+        </ul>
+        <div class="toppings-section">
+          <span class="toppings-label">תוספות לבחירה:</span>
+          <div class="toppings-tags">
+            <span class="tag">מרשמלו</span>
+            <span class="tag">אמסטרדם 2+</span>
+            <span class="tag">פיסטוק דובאי 2+</span>
+            <span class="tag">קליק</span>
+            <span class="tag">סוכריות צבעוניות</span>
+            <span class="tag">מיוחדות 2+</span>
+          </div>
+        </div>
+        <div class="card-food-image">
+          <img alt="מתנקים - פיצה שוקולד" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-4%3C/text%3E%3C/svg%3E" data-placeholder="home-menu-image-4" data-context="Chocolate pizza dessert with Nutella, mixed nuts, and colorful marshmallows on a wooden pizza board, indulgent dessert photography, warm moody lighting, close-up overhead shot" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+      </div>
+    </div>
+
+    <!-- תוספות -->
+    <div class="menu-card card-extras">
+      <div class="card-header-bar">
+        <span class="card-emoji">➕</span>
+        <h3 class="card-title">תוספות</h3>
+      </div>
+      <div class="card-body">
+        <p class="extras-intro">תוספות לבחירה:</p>
+        <div class="extras-tags">
+          <span class="tag">זיתים ירוקים</span>
+          <span class="tag">זיתי קלמטה</span>
+          <span class="tag">בולגרית</span>
+          <span class="tag">תירס</span>
+          <span class="tag">עגבניות</span>
+          <span class="tag">בצל</span>
+          <span class="tag">טונה</span>
+          <span class="tag">פטריות טריות</span>
+          <span class="tag">פלפל חריף</span>
+        </div>
+        <div class="extras-items">
+          <div class="extras-tier">
+            <span class="tier-label">ביצה קשה, קוביות בטטה, חציל קלוי, אקסטרה גבינה</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Photo Strip -->
+  <div class="photo-strip">
+    <div class="photo-strip-item">
+      <div class="photo-strip-img">
+        <img alt="פיצה בוראטה" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-5%3C/text%3E%3C/svg%3E" data-placeholder="home-menu-image-5" data-context="Neapolitan pizza with burrata cheese, cherry tomatoes, fresh basil and balsamic glaze drizzle, shot from above on dark slate surface, Italian restaurant premium food photography" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      </div>
+      <span class="photo-label">פיצה בוראטה</span>
+    </div>
+    <div class="photo-strip-item">
+      <div class="photo-strip-img">
+        <img alt="סלטים טריים" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF0083;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF008320;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3Ehome-menu-image-6%3C/text%3E%3C/svg%3E" data-placeholder="home-menu-image-6" data-context="Fresh Italian salad with quinoa, greens, cherry tomatoes, and white cheese in a ceramic bowl, vibrant colors, natural food photography, modern Israeli-Italian restaurant setting" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      </div>
+      <span class="photo-label">סלטים טריים</span>
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
   <div class="menu-footer-bar">
-    <div class="menu-footer-inner">
+    <div class="footer-bar-inner">
       <div class="footer-info-item">
-        <i class="fas fa-phone" aria-hidden="true" data-element-type="icon" data-element-id="icon-1779127685079-wr95eh0i7" data-icon-type="fontawesome"></i>
+        <i class="fas fa-phone" aria-hidden="true"></i>
         <span>04-8747011</span>
       </div>
-      <div class="footer-divider" aria-hidden="true">|</div>
       <div class="footer-info-item">
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
         <span>הכרמל 1 | מתחם דוד</span>
       </div>
-      <div class="footer-divider" aria-hidden="true">|</div>
-      <div class="footer-info-item">
-        <i class="fas fa-star" aria-hidden="true" data-element-type="icon" data-element-id="icon-1779127685079-kg5tlgrcp" data-icon-type="fontawesome"></i>
-        <span>כשר למהדרין</span>
+      <div class="footer-kosher">
+        <span class="kosher-footer-badge">כשר למהדרין</span>
       </div>
     </div>
   </div>
@@ -2947,148 +2790,6 @@
       var hasDH=false;
       if(heroEl){var hCs=getComputedStyle(heroEl);var hBI=hCs.backgroundImage;if(hBI&&hBI!=='none'){if(hBI.indexOf('url(')!==-1){var hM2=hCs.backgroundColor.match(/\d+/g);if(hM2&&hM2.length>=3){hasDH=sLum(parseInt(hM2[0]),parseInt(hM2[1]),parseInt(hM2[2]))<0.4;}else{hasDH=true;}}else if(hBI.indexOf('gradient')!==-1){var cM=hBI.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g);if(cM&&cM.length>0){var tLm=0;for(var ci=0;ci<cM.length;ci++){var pts=cM[ci].match(/\d+/g);tLm+=sLum(parseInt(pts[0]),parseInt(pts[1]),parseInt(pts[2]));}hasDH=(tLm/cM.length)<0.4;}else{hasDH=true;}}else{hasDH=true;}}else{var hM=hCs.backgroundColor.match(/\d+/g);if(hM&&hM.length>=3){hasDH=sLum(parseInt(hM[0]),parseInt(hM[1]),parseInt(hM[2]))<0.4;}}}
       if(!hasDH){window.removeEventListener('scroll',onS);window.removeEventListener('resize',onS);applyScrolled();window._zappyNavNoDarkHero=true;}
-    })();
-    </script>
-
-    <script>
-    (function(){
-      var _applied=false;
-      function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
-      function fixDesktopWrappers(){
-        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
-        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
-        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
-        // the correct stored dimensions.
-      }
-      function _parsePos(s){var x=50,y=50;try{var m=(s||'').match(/(-?d+(?:.d+)?)%s+(-?d+(?:.d+)?)%/);if(m){x=parseFloat(m[1]);y=parseFloat(m[2]);}}catch(e){}if(!isFinite(x))x=50;if(!isFinite(y))y=50;return{x:Math.max(0,Math.min(100,x)),y:Math.max(0,Math.min(100,y))};}
-      function _coverPct(iA,cA){if(!isFinite(iA)||iA<=0||!isFinite(cA)||cA<=0)return{w:100,h:100};if(iA>=cA)return{w:(iA/cA)*100,h:100};return{w:100,h:(cA/iA)*100};}
-      function applyMobile(){
-        if(_applied)return;_applied=true;
-        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
-          if(_isHeroBg(w))return;
-          var cw=w.style.getPropertyValue('width');
-          var _sW=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-width'))||0;
-          var _sH=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-height'))||0;
-          if(!cw&&!(_sW>0&&_sH>0))return;
-          if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
-          var img=w.querySelector('img');
-          if(!img)return;
-          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
-          var mobileZoomStr=img.getAttribute('data-zappy-mobile-zoom');
-          var mobileZoom=parseFloat(mobileZoomStr);
-          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
-          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
-          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
-          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
-          if(inConstrainedParent){
-            w.style.setProperty('max-width','100%','important');
-          }else{
-            w.style.setProperty('width','100%','important');
-            w.style.setProperty('max-width','100%','important');
-          }
-          if(mobileSrc)img.src=mobileSrc;
-          function _applyZoomCrop(_img,_w,_ePos,_eZoom){
-            var rect=_w.getBoundingClientRect();
-            if(!rect||!rect.width||!rect.height)return;
-            var nW=_img.naturalWidth||0,nH=_img.naturalHeight||0;
-            if(!(nW>0&&nH>0))return;
-            var iA=nW/nH,cA=rect.width/rect.height;
-            var cv=_coverPct(iA,cA);
-            var wP=100,hP=100;
-            if(_eZoom>=1){wP=cv.w*_eZoom;hP=cv.h*_eZoom;}
-            else{var t2=(_eZoom-0.5)/0.5;if(!isFinite(t2))t2=0;t2=Math.max(0,Math.min(1,t2));wP=100+t2*(cv.w-100);hP=100+t2*(cv.h-100);}
-            var p2=_parsePos(_ePos);
-            var lP=(100-wP)*(p2.x/100);
-            var tP=(100-hP)*(p2.y/100);
-            _img.style.setProperty('position','absolute','important');
-            _img.style.setProperty('left',lP+'%','important');
-            _img.style.setProperty('top',tP+'%','important');
-            _img.style.setProperty('width',wP+'%','important');
-            _img.style.setProperty('height',hP+'%','important');
-            _img.style.setProperty('max-width','none','important');
-            _img.style.setProperty('max-height','none','important');
-            _img.style.setProperty('display','block','important');
-            _img.style.setProperty('object-fit',_eZoom<1?'fill':'cover','important');
-            _img.style.setProperty('transform','none','important');
-            _img.style.setProperty('margin','0','important');
-          }
-          if(_sW>0&&_sH>0){
-            var effZoom=(isFinite(mobileZoom)&&mobileZoom>0)?mobileZoom:(parseFloat(img.getAttribute('data-zappy-zoom'))||1);
-            var effPos=mobilePos||img.getAttribute('data-zappy-object-position')||img.style.objectPosition||'50% 50%';
-            w.style.setProperty('overflow','hidden','important');
-            w.style.setProperty('position','relative','important');
-            w.style.setProperty('width','100%','important');
-            w.style.setProperty('max-width','100%','important');
-            if(_sW>0&&_sH>0){w.style.setProperty('padding-bottom','0','important');w.style.setProperty('aspect-ratio',_sW+'/'+_sH,'important');w.style.setProperty('height','auto','important');}
-            _applyZoomCrop(img,w,effPos,effZoom);
-            if(!(img.complete&&img.naturalWidth>0)){
-              (function(_i,_w2,_p,_z){_i.addEventListener('load',function _ol(){_i.removeEventListener('load',_ol);try{_applyZoomCrop(_i,_w2,_p,_z);}catch(e){}});
-              })(img,w,effPos,effZoom);
-            }
-          }else{
-            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
-            img.style.setProperty('position','relative','important');
-            img.style.setProperty('width','100%','important');
-            img.style.setProperty('height','auto','important');
-            img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
-            img.style.setProperty('object-fit','cover','important');
-            img.style.setProperty('left','0','important');
-            img.style.setProperty('top','0','important');
-            img.style.setProperty('transform','none','important');
-          }
-        });
-        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
-          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
-          if(zw&&!_isHeroBg(zw))return;
-          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
-          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
-          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
-          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
-          if(mobileSrc)img.src=mobileSrc;
-          if(mobilePos)img.style.setProperty('object-position',mobilePos,'important');
-          if(mobileZoom>1){
-            img.style.setProperty('transform','scale('+mobileZoom+')','important');
-            img.style.setProperty('transform-origin',mobilePos||'50% 50%','important');
-            var p=img.parentElement;
-            if(p)p.style.setProperty('overflow','hidden','important');
-          }
-        });
-      }
-      function revertDesktop(){
-        if(!_applied)return;_applied=false;
-        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
-          if(w._zappyDesktop&&w._zappyDesktop.wStyle!=null){w.setAttribute('style',w._zappyDesktop.wStyle);}
-          var img=w.querySelector('img');
-          if(img&&img._zappyDesktop){
-            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
-            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
-            else img.removeAttribute('style');
-          }
-        });
-        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
-          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
-          if(zw&&!_isHeroBg(zw))return;
-          if(img._zappyDesktop){
-            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
-            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
-            else img.removeAttribute('style');
-          }
-        });
-        _fixHeroBgWrappers();
-        fixDesktopWrappers();
-      }
-      function _fixHeroBgWrappers(){var isMob=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){if(!_isHeroBg(w))return;w.style.setProperty('position','absolute','important');w.style.setProperty('top','0','important');w.style.setProperty('left','0','important');w.style.setProperty('width','100%','important');w.style.setProperty('height','100%','important');w.style.setProperty('max-width','none','important');w.style.setProperty('overflow','hidden','important');w.setAttribute('data-zappy-zoom-wrapper-width-mode','full');var img=w.querySelector('img');if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','100%','important');img.style.setProperty('object-fit','cover','important');img.style.setProperty('position','relative','important');img.style.setProperty('top','0','important');img.style.setProperty('left','0','important');img.style.setProperty('max-width','none','important');img.style.setProperty('max-height','none','important');img.style.setProperty('display','block','important');if(isMob){var mSrc=img.getAttribute('data-zappy-mobile-src');var mPos=img.getAttribute('data-zappy-mobile-object-position');var mZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));if(mSrc){if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};img.src=mSrc;}if(mPos)img.style.setProperty('object-position',mPos,'important');if(mZoom>1){img.style.setProperty('transform','scale('+mZoom+')','important');img.style.setProperty('transform-origin',mPos||'50% 50%','important');}}}});}
-      function init(){
-        _fixHeroBgWrappers();
-        var mq=window.matchMedia('(max-width:768px)');
-        function onChange(e){if(e.matches)applyMobile();else revertDesktop();}
-        if(mq.matches)applyMobile();
-        else fixDesktopWrappers();
-        try{mq.addEventListener('change',onChange);}catch(e){mq.addListener(onChange);}
-      }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
-      else setTimeout(init,50);
     })();
     </script>
 </body>
