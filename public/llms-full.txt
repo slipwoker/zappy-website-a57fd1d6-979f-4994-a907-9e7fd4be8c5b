@@ -2,13 +2,13 @@
 
 Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends Italian culinary heritage with a modern Israeli identity, targeting a young, trendy, Instagram-savvy audience. The visual language is warm yet luxurious — deep burgundy (#C33A43) on a light cream background (#F8F8F8), with Italian checkerboard motifs, soft shadows, and warm culinary lighting. The brand aims to evoke an immediate craving through a premium, fast, app-like digital experience focused on driving online orders via Wolt and WhatsApp, with sharp Hebrew copywriting that feels authentic, witty, and appetite-inducing.
 
-Source: https://-a57fd1d6.zappy5.app
+Source: https://example.com
 
 ---
 
 ## fast food restaurants — פיצאדלה
 
-URL: https://-a57fd1d6.zappy5.app
+URL: https://example.com
 Description: Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends I
 
 fast food restaurants — פיצאדלה
@@ -878,7 +878,7 @@ Google Reviews
 
 ## מדיניות פרטיות
 
-URL: https://-a57fd1d6.zappy5.app/privacy
+URL: https://example.com/privacy
 Description: מדיניות הפרטיות שלנו - כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם
 
 מדיניות פרטיות
@@ -1151,7 +1151,7 @@ Description: מדיניות הפרטיות שלנו - כיצד אנו אוספי
 
 ## הצהרת נגישות
 
-URL: https://-a57fd1d6.zappy5.app/accessibility
+URL: https://example.com/accessibility
 Description: הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית
 
 הצהרת נגישות
@@ -1433,7 +1433,7 @@ Description: הצהרת הנגישות שלנו - מחויבותנו לנגיש�
 
 ## תנאי שימוש
 
-URL: https://-a57fd1d6.zappy5.app/terms
+URL: https://example.com/terms
 Description: תנאי השימוש באתר - הזכויות והחובות של המשתמשים
 
 תנאי שימוש
