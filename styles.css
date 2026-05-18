@@ -6441,6 +6441,389 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 ._access-icon {
   display: flex !important;
 }
+
+/* Added Component Styles */
+/* ===== PIZZADELLA MENU SECTION ===== */
+.pzd-menu-section {
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  background: #fdf8f0;
+  padding: 60px 20px 40px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Checkered border top/bottom */
+.pzd-menu-section::before,
+.pzd-menu-section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 18px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--primary, #C33A43) 0px,
+    var(--primary, #C33A43) 18px,
+    #fdf8f0 18px,
+    #fdf8f0 36px
+  );
+  background-size: 36px 18px;
+}
+.pzd-menu-section::before { top: 0; }
+.pzd-menu-section::after  { bottom: 0; }
+
+/* ===== HEADER ===== */
+.pzd-menu-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-top: 10px;
+}
+
+.pzd-menu-badge {
+  display: inline-block;
+  background: var(--primary, #C33A43);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
+}
+
+.pzd-menu-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--primary, #C33A43);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-shadow: 2px 2px 0 rgba(139,26,42,0.15);
+}
+
+.pzd-menu-subtitle {
+  font-size: 1rem;
+  color: #7a4a2a;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ===== GRID ===== */
+.pzd-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+}
+
+/* ===== CATEGORY CARDS ===== */
+.pzd-category-card {
+  background: #fff;
+  border: 2px solid rgba(195, 58, 67, 0.25);
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  box-shadow: 0 4px 18px rgba(195,58,67,0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  position: relative;
+}
+
+.pzd-category-card:hover {
+  box-shadow: 0 8px 28px rgba(195,58,67,0.16);
+  transform: translateY(-2px);
+}
+
+/* Accent top border per card */
+.pzd-category-card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 5px;
+  background: var(--gradient-primary, linear-gradient(135deg, #C41E3A 0%, #8B1A2A 100%));
+  border-radius: 14px 14px 0 0;
+}
+
+/* ===== CATEGORY TITLE ===== */
+.pzd-cat-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary, #C33A43);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed rgba(195,58,67,0.25);
+  text-align: center;
+  font-style: italic;
+}
+
+.pzd-cat-note {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  margin: -10px 0 12px;
+  font-style: italic;
+}
+
+/* ===== ITEM LIST ===== */
+.pzd-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pzd-item {
+  border-bottom: 1px dotted rgba(195,58,67,0.18);
+  padding-bottom: 10px;
+}
+
+.pzd-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pzd-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pzd-item-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2a1a1a;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.pzd-item-price {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--primary, #C33A43);
+  white-space: nowrap;
+  min-width: 30px;
+  text-align: left;
+}
+
+.pzd-item-desc {
+  font-size: 0.78rem;
+  color: #666;
+  margin: 3px 0 0;
+  line-height: 1.5;
+}
+
+/* Highlight items (deals) */
+.pzd-item-highlight {
+  background: rgba(195,58,67,0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+  border-bottom: none;
+}
+
+.pzd-item-price-big {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--primary, #C33A43);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ===== PASTA SAUCES ===== */
+.pzd-pasta-sauces {
+  margin-top: 14px;
+  background: rgba(195,58,67,0.05);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border-right: 3px solid var(--primary, #C33A43);
+}
+
+.pzd-sauces-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--primary, #C33A43);
+  margin: 0 0 4px;
+}
+
+.pzd-sauces-list {
+  font-size: 0.8rem;
+  color: #444;
+  margin: 0 0 4px;
+  line-height: 1.5;
+}
+
+.pzd-sauces-note {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== DESSERT OPTIONS ===== */
+.pzd-dessert-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  background: rgba(195,58,67,0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.pzd-dessert-col {
+  flex: 1;
+}
+
+.pzd-dessert-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary, #C33A43);
+  margin: 0 0 5px;
+}
+
+.pzd-dessert-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pzd-dessert-col ul li {
+  font-size: 0.78rem;
+  color: #555;
+  padding: 2px 0;
+  border-bottom: 1px dotted rgba(195,58,67,0.15);
+}
+
+.pzd-dessert-col ul li:last-child {
+  border-bottom: none;
+}
+
+/* ===== EXTRAS ===== */
+.pzd-extras-special {
+  margin-top: 14px;
+  background: rgba(195,58,67,0.06);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border-right: 3px solid var(--primary, #C33A43);
+}
+
+.pzd-extras-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--primary, #C33A43);
+  margin: 0 0 6px;
+}
+
+.pzd-extras-prices {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.pzd-extras-prices span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary, #C33A43);
+  background: rgba(195,58,67,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ===== FOOTER ===== */
+.pzd-menu-footer {
+  text-align: center;
+  padding: 24px 20px 10px;
+  border-top: 2px dashed rgba(195,58,67,0.25);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pzd-contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.pzd-phone {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--primary, #C33A43);
+  letter-spacing: 0.04em;
+  direction: ltr;
+  display: inline-block;
+}
+
+.pzd-address {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5a3a2a;
+}
+
+.pzd-footer-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 4px 0 0;
+}
+
+/* ===== SPECIAL CARD SPANS ===== */
+.pzd-cat-oven,
+.pzd-cat-pizzagrill {
+  grid-column: span 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .pzd-menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .pzd-menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pzd-menu-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .pzd-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pzd-menu-section {
+    padding: 50px 14px 30px;
+  }
+
+  .pzd-menu-title {
+    font-size: 2rem;
+  }
+
+  .pzd-category-card {
+    padding: 20px 16px 16px;
+  }
+
+  .pzd-phone {
+    font-size: 1.3rem;
+  }
+
+  .pzd-contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
