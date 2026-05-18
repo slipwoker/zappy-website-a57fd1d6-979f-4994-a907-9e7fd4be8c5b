@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>fast food restaurants — פיצאדלה</title>
+    <meta name="description" content="Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends I">
+    <meta name="keywords" content="fast food restaurants, restaurants near me, kosher restaurants near me, פיצה, פיצה אור עקיבא">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'a57fd1d6-979f-4994-a907-9e7fd4be8c5b',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="fast food restaurants — פיצאדלה">
+    <meta property="og:description" content="Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends I">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="fast food restaurants — פיצאדלה">
+    <meta name="twitter:description" content="Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends I">
+    <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .skip-link { position: absolute; top: 0; left: 0; transform: translateY(-200%); padding: 12px 18px; background: var(--bg-dark, #1a1a1a); color: var(--text-light, #fff); font-weight: 600; border-radius: 0 0 8px 0; z-index: 10000; }
+    .skip-link:focus { transform: none; outline: 2px solid var(--ring, #fff); outline-offset: 2px; }
+    :focus-visible { outline: 2px solid var(--ring, currentColor); outline-offset: 3px; }
+  </style>
+
+
+  
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-light) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-light) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-light) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box.opened-mic-access-tool, .mic-access-tool-box.opened-mic-access-tool,
+        #mic-init-access-tool #mic-access-tool-box.opened-mic-access-tool {
+          visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
+        }
+      }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+
+  <button class="phone-header-btn" data-phone="" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+
+  <div class="nav-container">
+    <div class="nav-right-group"><div class="nav-brand">
+      <a href="/" class="logo-link"><img class="logo" src="/assets/site-----image-1.webp" alt="פיצאדלה"></a>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="#menu">תפריט</a></li><li><a href="#deals">מבצעים</a></li><li><a href="#story">הסיפור שלנו</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#stats">במספרים</a></li></ul></div>
+
+    
+
+    <div class="nav-cta-container">
+      <a href="#cta" class="nav-cta-btn">צור קשר</a>
+    </div>
+  </div>
+</nav>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .navbar,
+          nav.navbar {
+            min-height: 70px !important;
+          }
+
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            margin-top: auto !important;
+            margin-bottom: auto !important;
+            transform: none !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-light)) !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+
+          html[data-zappy-site-type="ecommerce"] .phone-header-btn,
+          body[data-zappy-site-type="ecommerce"] .phone-header-btn,
+          html[data-zappy-site-type="ecommerce"] header .phone-header-btn,
+          html[data-zappy-site-type="ecommerce"] nav .phone-header-btn {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            min-width: 0 !important;
+            overflow: hidden !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth <= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '0', 'important');
+          mobileToggle.style.setProperty('bottom', '0', 'important');
+          mobileToggle.style.setProperty('margin-top', 'auto', 'important');
+          mobileToggle.style.setProperty('margin-bottom', 'auto', 'important');
+          mobileToggle.style.setProperty('transform', 'none', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '0', 'important');
+          phoneBtn.style.setProperty('bottom', '0', 'important');
+          phoneBtn.style.setProperty('margin-top', 'auto', 'important');
+          phoneBtn.style.setProperty('margin-bottom', 'auto', 'important');
+          phoneBtn.style.setProperty('transform', 'none', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu handler (shared by click and touchend)
+    function handleToggle(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+      const closeIcon = newToggle.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    }
+    
+    // Use click for desktop/emulation and touchend as iOS Safari fallback.
+    // Prevent double-fire with a timestamp guard.
+    var lastToggleTime = 0;
+    function guardedToggle(e) {
+      var now = Date.now();
+      if (now - lastToggleTime < 300) return;
+      lastToggleTime = now;
+      handleToggle(e);
+    }
+    
+    newToggle.addEventListener('click', guardedToggle);
+    newToggle.addEventListener('touchend', guardedToggle);
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // WhatsApp button visibility is now controlled via CSS (siteSettings).
+    // No JS-based desktop hiding — the button is visible on both mobile and desktop by default.
+  });
+})();
+
+</script>
+  
+  <main id="main">
+    <section data-band-index="0" id="hero" class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim">
+  <!-- Background Image -->
+  <div class="index-hero-bg">
+    <img loading="eager" fetchpriority="high" data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Premium Neapolitan pizza on a rustic wooden board, close-up shot with warm golden culinary lighting, bubbling mozzarella cheese, charred leopard-spotted crust edges, fresh basil leaves, drizzle of olive oil, rich tomato sauce, steam rising from the pizza, dark moody background with warm amber highlights, Italian pizzeria atmosphere, no pepperoni no bacon no meat, food photography style, shallow depth of field, magazine quality, burgundy and cream color tones" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="פיצה נפוליטנית פרימיום של פיצאדלה">
+  </div>
+
+  <!-- Scrim Overlay -->
+  <div class="index-hero-scrim" aria-hidden="true"></div>
+
+  <!-- Checkerboard Corner Decoration -->
+  <div class="index-hero-checker" aria-hidden="true"></div>
+
+  <!-- Italian Stamp Badge -->
+  <div class="index-hero-stamp" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="54" fill="none" stroke="#C33A43" stroke-width="2" stroke-dasharray="4 3"></circle>
+      <circle cx="60" cy="60" r="46" fill="rgba(32,24,21,0.82)" stroke="#C33A43" stroke-width="1"></circle>
+      <path id="stamp-arc" d="M 20,60 A 40,40 0 1,1 100,60" fill="none"></path>
+      <text font-size="9" font-family="Heebo, sans-serif" font-weight="700" fill="#F8F8F8" letter-spacing="2">
+        <textPath href="#stamp-arc" startOffset="8%">• פיצאדלה • PIZZADELLA •</textPath>
+      </text>
+      <text x="60" y="56" text-anchor="middle" font-size="11" font-family="Heebo, sans-serif" font-weight="700" fill="#C33A43" letter-spacing="1">NAPOLI</text>
+      <text x="60" y="70" text-anchor="middle" font-size="8" font-family="Heebo, sans-serif" fill="#F8F8F8">STYLE</text>
+      <text x="60" y="82" text-anchor="middle" font-size="7" font-family="Heebo, sans-serif" fill="#F26A3D">✦ 1 ✦</text>
+    </svg>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="index-hero-content-wrap">
+    <div class="index-hero-content">
+
+      <!-- Eyebrow label -->
+      <span class="index-hero-eyebrow">פיצרייה בוטיק ישראלית-איטלקית</span>
+
+      <!-- H1 -->
+      <h1 class="index-hero-h1">יותר מסתם פיצה.<br><span class="index-hero-h1-accent">זו חוויה.</span></h1>
+
+      <!-- Supporting subtitle -->
+      <h3 class="index-hero-subtitle">פיצות נפוליטניות אותנטיות מבצק מחמצת, עם מרכיבים פרימיום — ומשלוח מהיר עד אליך.</h3>
+
+      <!-- CTA Buttons -->
+      <div class="index-hero-ctas">
+        <a href="https://wolt.com" target="_blank" rel="noopener noreferrer" class="index-hero-btn-primary">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          להזמנה עכשיו ב-Wolt
+        </a>
+        
+      </div>
+
+      <!-- Trust Cues -->
+      <div class="index-hero-trust">
+        <span class="index-hero-trust-chip">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          בצק מחמצת אותנטי
+        </span>
+        <span class="index-hero-trust-chip">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          מרכיבים פרימיום
+        </span>
+        <span class="index-hero-trust-chip">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          משלוח מהיר
+        </span>
+        <span class="index-hero-trust-chip">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          אפוי ב-480 מעלות
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Divider -->
+  <div class="index-hero-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,52 Q80,38 180,48 T380,42 Q480,36 560,46 T740,40 Q840,34 940,44 T1100,38 Q1150,42 1200,36 L1200,90 Z" fill="#F5F0E8"></path>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="1" id="menu" class="index-menu-section" data-layout-spec="בית-menu" dir="rtl">
+  <!-- Flour-grain texture overlay -->
+  <div class="index-menu-texture" aria-hidden="true"></div>
+
+  <!-- Intro block -->
+  <div class="index-menu-container">
+    <div class="index-menu-intro">
+      <span class="index-menu-eyebrow">התפריט שלנו</span>
+      <h2 class="index-menu-title">כל מה שצריך כדי להיות מאושר</h2>
+      <p class="index-menu-subtitle">פיצות נפוליטניות עשויות בתנור 480 מעלות, פסטות טריות, סלטים עם מרכיבים עונתיים — ועוד. אוכל איטלקי אמיתי, עם נשמה ישראלית.</p>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="index-menu-grid">
+
+      <!-- Card 1: Pizzas — LARGE, START side -->
+      <article class="index-menu-card index-menu-card--large">
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-1" data-context="Overhead close-up of an authentic Neapolitan-style pizza on a wooden board, charred bubbly crust, fresh mozzarella, basil leaves, rich tomato sauce, no pepperoni or meat, warm culinary lighting, premium Italian pizzeria aesthetic, appetizing and Instagram-worthy" width="720" height="480" src="/assets/site-index-menu-image-1.webp" alt="פיצה נפוליטנית של פיצאדלה — קראסט מושלם ומוצרלה טרייה">
+          <div class="index-menu-card-badge">הכי אהוב</div>
+        </div>
+        <div class="index-menu-card-body">
+          <h3 class="index-menu-card-title">פיצות</h3>
+          <p class="index-menu-card-desc">בצק מחמצת שמתפח 48 שעות, רוטב סן מרצאנו, מוצרלה פיורדי לאטה — כל פיצה נאפית בתנור עצים ב-480°. פיצה אור עקיבא ברמה אחרת לגמרי.</p>
+          <a href="#pizzas" class="index-menu-card-link">לכל הפיצות <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 2: Pastas -->
+      <article class="index-menu-card">
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-2" data-context="Close-up of fresh handmade pasta dish, tagliatelle or rigatoni with creamy tomato sauce and fresh herbs, in a rustic ceramic bowl, warm Italian restaurant lighting, premium food photography, no meat visible" width="480" height="320" src="/assets/site-index-menu-image-2.webp" alt="פסטה טרייה עם רוטב עגבניות ועשבי תיבול">
+        </div>
+        <div class="index-menu-card-body">
+          <h3 class="index-menu-card-title">פסטות</h3>
+          <p class="index-menu-card-desc">פסטה טרייה עשויה בידיים, ברטבים עשירים שמתבשלים לאט. כי אוכל איטלקי אמיתי לא ממהר.</p>
+          <a href="#pastas" class="index-menu-card-link">לכל הפסטות <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 3: Salads — with checkerboard backplate decoration -->
+      <article class="index-menu-card index-menu-card--checker">
+        <!-- Checkerboard decorative backplate -->
+        <div class="index-menu-checker-backplate" aria-hidden="true">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="90" height="90" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="30" y="0" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="60" y="0" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="15" y="15" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="45" y="15" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="75" y="15" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="0" y="30" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="30" y="30" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="60" y="30" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="15" y="45" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="45" y="45" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="75" y="45" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="0" y="60" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="30" y="60" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="60" y="60" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="15" y="75" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="45" y="75" width="15" height="15" fill="#C33A43"></rect>
+            <rect x="75" y="75" width="15" height="15" fill="#C33A43"></rect>
+          </svg>
+        </div>
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-3" data-context="Fresh vibrant salad in a white bowl, colorful vegetables, cherry tomatoes, cucumber, arugula, olive oil dressing, rustic Italian restaurant setting, warm natural lighting, premium food photography, healthy and appetizing" width="480" height="320" src="/assets/site-index-menu-image-3.webp" alt="סלט טרי ועשיר של פיצאדלה">
+        </div>
+        <div class="index-menu-card-body">
+          <h3 class="index-menu-card-title">סלטים</h3>
+          <p class="index-menu-card-desc">ירקות עונתיים, גבינות מיובאות, שמן זית כתית מעולה. סלטים שמרגישים כמו ארוחה שלמה.</p>
+          <a href="#salads" class="index-menu-card-link">לכל הסלטים <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 4: Desserts -->
+      <article class="index-menu-card">
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-4" data-context="Italian desserts on a rustic wooden table, tiramisu in a glass cup with cocoa dusting, cannoli with ricotta filling, warm restaurant lighting, close-up premium food photography, indulgent and crave-worthy" width="480" height="320" src="/assets/site-index-menu-image-4.webp" alt="קינוחים איטלקיים של פיצאדלה — טירמיסו וקנולי">
+        </div>
+        <div class="index-menu-card-body">
+          <h3 class="index-menu-card-title">קינוחים</h3>
+          <p class="index-menu-card-desc">טירמיסו ביתי, קנולי קריספי עם ריקוטה טרייה, ופנה קוטה שמתנדנדת. הסוף המתוק שמגיע לך.</p>
+          <a href="#desserts" class="index-menu-card-link">לכל הקינוחים <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 5: Drinks -->
+      <article class="index-menu-card">
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-5" data-context="Italian drinks selection on a restaurant table, sparkling water in glass bottles, fresh lemonade with mint, Italian sodas, warm ambient restaurant lighting, premium beverage photography, clean and refreshing" width="480" height="320" src="/assets/site-index-menu-image-5.webp" alt="שתייה ומשקאות של פיצאדלה">
+        </div>
+        <div class="index-menu-card-body">
+          <h3 class="index-menu-card-title">שתייה</h3>
+          <p class="index-menu-card-desc">לימונדה סיציליאנית, משקאות מוגזים, מים מינרלים איטלקיים ועוד. כי לכל ארוחה מגיע המשקה הנכון.</p>
+          <a href="#drinks" class="index-menu-card-link">לכל השתייה <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 6: Catering -->
+      <article class="index-menu-card index-menu-card--catering">
+        <div class="index-menu-card-image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-menu-image-6" data-context="Catering spread with multiple Italian dishes on large platters, mini pizzas on wooden boards, pasta salads in bowls, elegant event setup, warm lighting, premium catering photography for a boutique Italian restaurant, abundant and shareable" width="480" height="320" src="/assets/site-index-menu-image-6.webp" alt="מגשי קייטרינג ואירועים של פיצאדלה">
+        </div>
+        <div class="index-menu-card-body">
+          <div class="index-menu-card-tag">חדש</div>
+          <h3 class="index-menu-card-title">מגשים ואירועים</h3>
+          <p class="index-menu-card-desc">מגשי פיצה, פסטה וסלטים לאירועים, ימי הולדת, ישיבות עסקיות וחגיגות משפחתיות. מזמינים מראש — מגיע אצלכם.</p>
+          <a href="#catering" class="index-menu-card-link">לפרטים על קייטרינג <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+    </div>
+    <!-- End grid -->
+
+    <!-- Bottom CTA row -->
+    <div class="index-menu-cta-row">
+      <a href="#full-menu" class="index-menu-btn-primary">לתפריט המלא</a>
+      <a href="https://wolt.com" target="_blank" rel="noopener noreferrer" class="index-menu-btn-wolt">
+        <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#009DE0"></circle><path d="M7 12l2 4 2-4 2 4 2-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        הזמנה דרך Wolt
+      </a>
+    </div>
+  </div>
+
+  <!-- Receipt-strip bottom divider -->
+  <div class="index-menu-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Receipt perforation strip -->
+      <path d="M0,72 L0,18 Q10,10 20,18 Q30,26 40,18 Q50,10 60,18 Q70,26 80,18 Q90,10 100,18 Q110,26 120,18 Q130,10 140,18 Q150,26 160,18 Q170,10 180,18 Q190,26 200,18 Q210,10 220,18 Q230,26 240,18 Q250,10 260,18 Q270,26 280,18 Q290,10 300,18 Q310,26 320,18 Q330,10 340,18 Q350,26 360,18 Q370,10 380,18 Q390,26 400,18 Q410,10 420,18 Q430,26 440,18 Q450,10 460,18 Q470,26 480,18 Q490,10 500,18 Q510,26 520,18 Q530,10 540,18 Q550,26 560,18 Q570,10 580,18 Q590,26 600,18 Q610,10 620,18 Q630,26 640,18 Q650,10 660,18 Q670,26 680,18 Q690,10 700,18 Q710,26 720,18 Q730,10 740,18 Q750,26 760,18 Q770,10 780,18 Q790,26 800,18 Q810,10 820,18 Q830,26 840,18 Q850,10 860,18 Q870,26 880,18 Q890,10 900,18 Q910,26 920,18 Q930,10 940,18 Q950,26 960,18 Q970,10 980,18 Q990,26 1000,18 Q1010,10 1020,18 Q1030,26 1040,18 Q1050,10 1060,18 Q1070,26 1080,18 Q1090,10 1100,18 Q1110,26 1120,18 Q1130,10 1140,18 Q1150,26 1160,18 Q1170,10 1180,18 Q1190,26 1200,18 L1200,72 Z" fill="#201815"></path>
+      <!-- Perforation dots -->
+      <circle cx="30" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="90" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="150" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="210" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="270" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="330" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="390" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="450" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="510" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="570" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="630" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="690" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="750" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="810" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="870" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="930" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="990" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="1050" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="1110" cy="10" r="3" fill="#C33A43"></circle>
+      <circle cx="1170" cy="10" r="3" fill="#C33A43"></circle>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="2" id="deals" class="index-deals-section" data-layout-spec="בית-deals" dir="rtl">
+  <!-- Decorative checkerboard corner -->
+  <div class="deals-checkerboard-corner" aria-hidden="true"></div>
+
+  <div class="deals-container">
+    <!-- Section Header -->
+    <div class="deals-header">
+      <div class="deals-label-pill">🔥 מבצעים חמים</div>
+      <h2 class="deals-title">עסקאות שאי אפשר לסרב להן</h2>
+      <p class="deals-subtitle">משלוחים, ארוחות צוות, ערבי פיצה — הכל בפחות ממה שחשבת</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="deals-grid">
+
+      <!-- Hero Deal Card (large, start side = right) -->
+      <article class="deals-card deals-card--hero">
+        <!-- Sticker badge -->
+        <div class="deals-sticker deals-sticker--hero" aria-hidden="true">
+          <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="90" height="90">
+            <circle cx="50" cy="50" r="46" fill="#C33A43" stroke="#F26A3D" stroke-width="3"></circle>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#F8F8F8" stroke-width="1" stroke-dasharray="4 3"></circle>
+            <text x="50" y="42" text-anchor="middle" fill="#F8F8F8" font-size="11" font-weight="700" font-family="Heebo, sans-serif">מבצע</text>
+            <text x="50" y="57" text-anchor="middle" fill="#F26A3D" font-size="18" font-weight="900" font-family="Heebo, sans-serif">HOT</text>
+            <text x="50" y="70" text-anchor="middle" fill="#F8F8F8" font-size="9" font-family="Heebo, sans-serif">מוגבל בזמן</text>
+          </svg>
+        </div>
+
+        <div class="deals-card__image-wrap">
+          <img loading="lazy" decoding="async" data-placeholder="index-deals-image-1" data-context="Overhead shot of a Neapolitan-style pizza with fresh mozzarella, cherry tomatoes, basil leaves and olive oil drizzle on a rustic wooden board, warm culinary lighting, rich food photography, Italian pizzeria aesthetic, no pepperoni or meat" width="600" height="400" src="/assets/site-index-deals-image-1.webp" alt="פיצה נפוליטנית עם מוצרלה ועגבניות שרי">
+          <div class="deals-card__image-overlay"></div>
+          <span class="deals-card__tag">ערב פיצה</span>
+        </div>
+
+        <div class="deals-card__body">
+          <h3 class="deals-card__title">ערב פיצה לשניים</h3>
+          <p class="deals-card__desc">2 פיצות נפוליטניות + 2 שתייה + קינוח הבית — כל הטוב הזה ביחד. מושלם לתאריך, לחברים, לכל סיבה טובה.</p>
+          <div class="deals-card__price-row">
+            <span class="deals-card__price">₪119</span>
+            <span class="deals-card__price-was">₪158</span>
+          </div>
+          <a href="https://wolt.com" target="_blank" rel="noopener" class="deals-btn deals-btn--primary">
+            <i class="fas fa-motorcycle"></i>
+            להזמנה בוולט
+          </a>
+        </div>
+      </article>
+
+      <!-- Small Cards Stack (end side = left) -->
+      <div class="deals-stack">
+
+        <!-- Small Card 1: Office Lunch -->
+        <article class="deals-card deals-card--small">
+          <!-- Sticker badge -->
+          <div class="deals-sticker deals-sticker--small" aria-hidden="true">
+            <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+              <circle cx="40" cy="40" r="37" fill="#201815" stroke="#F26A3D" stroke-width="2.5"></circle>
+              <text x="40" y="36" text-anchor="middle" fill="#F26A3D" font-size="9" font-weight="700" font-family="Heebo, sans-serif">ארוחת</text>
+              <text x="40" y="50" text-anchor="middle" fill="#F8F8F8" font-size="14" font-weight="900" font-family="Heebo, sans-serif">צוות</text>
+            </svg>
+          </div>
+
+          <div class="deals-card--small__inner">
+            <div class="deals-card--small__image-wrap">
+              <img loading="lazy" decoding="async" data-placeholder="index-deals-image-2" data-context="Overhead flat lay of multiple Neapolitan pizzas on a long table with fresh salads, sparkling water bottles and napkins, office lunch setting, warm natural light, Italian food photography, no meat toppings" width="300" height="200" src="/assets/site-index-deals-image-2.webp" alt="ארוחת צוות במשרד — פיצות ומנות לקבוצה">
+            </div>
+            <div class="deals-card__body">
+              <h3 class="deals-card__title">ארוחת צוות במשרד</h3>
+              <p class="deals-card__desc">5 פיצות + 5 שתיות + משלוח חינם לכל הזמנה מעל ₪250. מתאים לפגישות, ימי גיבוש ואנשים שיודעים להעריך אוכל טוב.</p>
+              <div class="deals-card__price-row">
+                <span class="deals-card__price">₪249</span>
+                <span class="deals-card__badge">משלוח חינם</span>
+              </div>
+              <a href="https://wa.me/whatsapp_handle" target="_blank" rel="noopener" class="deals-btn deals-btn--whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                להזמנה בוואטסאפ
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Small Card 2: Catering & Events -->
+        <article class="deals-card deals-card--small deals-card--dark">
+          <!-- Sticker badge -->
+          <div class="deals-sticker deals-sticker--small deals-sticker--light" aria-hidden="true">
+            <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+              <circle cx="40" cy="40" r="37" fill="#C33A43" stroke="#F8F8F8" stroke-width="2"></circle>
+              <text x="40" y="35" text-anchor="middle" fill="#F8F8F8" font-size="8" font-weight="700" font-family="Heebo, sans-serif">אירועים</text>
+              <text x="40" y="50" text-anchor="middle" fill="#F8F8F8" font-size="11" font-weight="900" font-family="Heebo, sans-serif">קייטרינג</text>
+            </svg>
+          </div>
+
+          <div class="deals-card--small__inner">
+            <div class="deals-card--small__image-wrap">
+              <img loading="lazy" decoding="async" data-placeholder="index-deals-image-3" data-context="Elegant catering table setup with multiple Neapolitan pizzas arranged beautifully, fresh basil garnish, olive oil bottles, elegant event setting with warm string lights in background, premium Italian food catering, no meat toppings" width="300" height="200" src="/assets/site-index-deals-image-3.webp" alt="קייטרינג אירועים — פיצות נפוליטניות לאירוע">
+            </div>
+            <div class="deals-card__body">
+              <h3 class="deals-card__title">קייטרינג ואירועים</h3>
+              <p class="deals-card__desc">יום הולדת, ברית, חינה, ימי גיבוש — פיצאדלה מגיעה אליך. חבילות מותאמות אישית, שירות פרימיום, פיצה שאנשים מדברים עליה.</p>
+              <a href="https://wa.me/whatsapp_handle" target="_blank" rel="noopener" class="deals-btn deals-btn--outline">
+                <i class="fas fa-star"></i>
+                לפרטים ותיאום
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <!-- /deals-stack -->
+    </div>
+    <!-- /deals-grid -->
+  </div>
+  <!-- /deals-container -->
+
+  <!-- Bottom Wave Divider → cream section -->
+  <div class="deals-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,55 Q100,30 200,52 T400,42 Q500,35 600,50 T800,40 Q900,32 1000,50 T1200,44 L1200,90 Z" fill="#F5F0E8"></path>
+      <path d="M0,58 Q100,33 200,55 T400,45 Q500,38 600,53 T800,43 Q900,35 1000,53 T1200,47" fill="#F5F0E8" stroke="#F26A3D" stroke-width="2" opacity="0.6"></path>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="3" id="story" class="index-story-section" data-layout-spec="בית-story" dir="rtl">
+  <!-- Subtle paper texture overlay -->
+  <div class="index-story-texture" aria-hidden="true"></div>
+
+  <div class="index-story-container">
+    <!-- Content Column (START = RIGHT in RTL) -->
+    <div class="index-story-content">
+      <!-- Checkerboard accent -->
+      <div class="index-story-checker" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="12" y="0" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="24" y="0" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="36" y="0" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="0" y="12" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="12" y="12" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="24" y="12" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="36" y="12" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="0" y="24" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="12" y="24" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="24" y="24" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="36" y="24" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="0" y="36" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="12" y="36" width="12" height="12" fill="var(--primary)"></rect>
+          <rect x="24" y="36" width="12" height="12" fill="var(--bg-light)"></rect>
+          <rect x="36" y="36" width="12" height="12" fill="var(--primary)"></rect>
+        </svg>
+      </div>
+
+      <p class="index-story-label">הסיפור שלנו</p>
+      <h2 class="index-story-heading">פיצה שנולדה
+מאהבה אמיתית</h2>
+      <p class="index-story-lead">פיצאדלה היא לא עוד פיצרייה — היא תפיסת עולם. שילוב של מסורת נפוליטנית עתיקה עם הרוח הישראלית החמה, בפיצרייה בוטיק שיודעת בדיוק מה היא עושה.</p>
+      <p class="index-story-body">כל פיצה שיוצאת מהתנור שלנו עברה תהליך של 48 שעות התפחה, עם קמח איטלקי מובחר, עגבניות סן מרצאנו אמיתיות, ומוצרלה טרייה שמגיעה ישירות מהמקור. זו לא רק אוכל — זו חוויה שמתחילה מהריח ומסתיימת בחיוך.</p>
+
+      <!-- Value Points -->
+      <ul class="index-story-values">
+        <li class="index-story-value-item">
+          <div class="index-story-value-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="14" r="12" stroke="var(--primary)" stroke-width="1.5" fill="none"></circle>
+              <path d="M8 14 C8 10 11 7 14 7 C17 7 20 10 20 14 C20 18 17 21 14 21 C11 21 8 18 8 14Z" stroke="var(--primary)" stroke-width="1.5" fill="none"></path>
+              <path d="M14 7 C12 11 12 17 14 21" stroke="var(--primary)" stroke-width="1" fill="none"></path>
+              <path d="M8 14 L20 14" stroke="var(--primary)" stroke-width="1" fill="none"></path>
+            </svg>
+          </div>
+          <div class="index-story-value-content">
+            <h3 class="index-story-value-title">בצק שמתבגר יפה</h3>
+            <p class="index-story-value-desc">48 שעות התפחה איטית מייצרות בצק אוורירי, קריספי מבחוץ ורך מבפנים — בדיוק כמו שצריך להיות.</p>
+          </div>
+        </li>
+        <li class="index-story-value-item">
+          <div class="index-story-value-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 4 C14 4 10 8 10 12 C10 15.3 11.8 17.5 14 18 C16.2 17.5 18 15.3 18 12 C18 8 14 4 14 4Z" stroke="var(--accent)" stroke-width="1.5" fill="rgba(149,180,106,0.15)"></path>
+              <path d="M14 18 L14 24" stroke="var(--accent)" stroke-width="1.5"></path>
+              <path d="M10 22 C11.5 21 14 21 14 24" stroke="var(--accent)" stroke-width="1.2" fill="none"></path>
+              <path d="M18 20 C16.5 19.5 14 20 14 22" stroke="var(--accent)" stroke-width="1.2" fill="none"></path>
+            </svg>
+          </div>
+          <div class="index-story-value-content">
+            <h3 class="index-story-value-title">מרכיבים שמדברים בעד עצמם</h3>
+            <p class="index-story-value-desc">עגבניות סן מרצאנו, מוצרלה פיור די לאטה, שמן זית כתית מעולה — כי אוכל טוב מתחיל בחומרי גלם יוצאי דופן.</p>
+          </div>
+        </li>
+        <li class="index-story-value-item">
+          <div class="index-story-value-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="20" height="14" rx="3" stroke="var(--secondary)" stroke-width="1.5" fill="none"></rect>
+              <path d="M9 8 L9 6 C9 5 10 4 14 4 C18 4 19 5 19 6 L19 8" stroke="var(--secondary)" stroke-width="1.5" fill="none"></path>
+              <path d="M10 15 L13 18 L18 12" stroke="var(--secondary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="index-story-value-content">
+            <h3 class="index-story-value-title">טרי, מהיר, עד הבית</h3>
+            <p class="index-story-value-desc">פיצה שיוצאת מהתנור ישירות לדלת שלך — בלי פשרות על טריות, בלי המתנה אינסופית. אוכל איטלקי אמיתי, משלוחי אוכל אור עקיבא במהירות הבזק.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Imagery Column (END = LEFT in RTL) -->
+    <div class="index-story-imagery">
+      <div class="index-story-img-primary-wrap">
+        <img loading="lazy" decoding="async" data-placeholder="index-story-image-1" data-context="Close-up editorial photograph of a freshly baked Neapolitan pizza on a wooden peel, shot from above at a slight angle. The pizza has a beautifully charred puffy crust (cornicione), vibrant San Marzano tomato sauce, melted fior di latte mozzarella, fresh basil leaves, and a drizzle of olive oil. Warm golden culinary lighting, artisan Italian pizzeria aesthetic, no meat toppings. Premium food photography style." width="560" height="680" src="/assets/site-index-story-image-1.webp" alt="פיצה נפוליטנית טרייה מהתנור של פיצאדלה" class="index-story-img-primary">
+        <!-- Decorative stamp badge -->
+        <div class="index-story-stamp" aria-hidden="true">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="48" cy="48" r="44" fill="var(--bg-dark)" stroke="var(--primary)" stroke-width="2"></circle>
+            <circle cx="48" cy="48" r="36" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="3 3"></circle>
+            <path id="story-stamp-arc" d="M 16,48 A 32,32 0 1,1 80,48" fill="none"></path>
+            <text font-size="7.5" fill="var(--text-light)" font-family="Heebo, sans-serif" font-weight="700" letter-spacing="2">
+              <textPath href="#story-stamp-arc">• נפוליטנית אמיתית • מאפייה בוטיק •</textPath>
+            </text>
+            <text x="48" y="44" text-anchor="middle" font-size="11" fill="var(--primary)" font-family="Bebas Neue, sans-serif" letter-spacing="1">480°</text>
+            <text x="48" y="56" text-anchor="middle" font-size="7" fill="var(--text-light)" font-family="Heebo, sans-serif" letter-spacing="1.5">GRADI</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Secondary peeking tile -->
+      <div class="index-story-img-secondary-wrap">
+        <img loading="lazy" decoding="async" data-placeholder="index-story-image-2" data-context="Overhead flat-lay of Italian pizza-making ingredients arranged artfully on a rustic marble surface: a small bowl of San Marzano tomato sauce, fresh mozzarella balls, green basil leaves, olive oil bottle, scattered flour, and a small dish of sea salt. Warm natural lighting, editorial food styling, Italian culinary aesthetic, no meat." width="280" height="280" src="/assets/site-index-story-image-2.webp" alt="מרכיבים איטלקיים איכותיים של פיצאדלה" class="index-story-img-secondary">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom checkerboard divider band -->
+  <div class="index-story-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="checker-divider" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="16" height="16" fill="rgba(195,58,67,0.18)"></rect>
+          <rect x="16" y="16" width="16" height="16" fill="rgba(195,58,67,0.18)"></rect>
+          <rect x="16" y="0" width="16" height="16" fill="transparent"></rect>
+          <rect x="0" y="16" width="16" height="16" fill="transparent"></rect>
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="1200" height="64" fill="url(#checker-divider)"></rect>
+      <path d="M0,64 L0,28 Q50,22 100,30 T200,26 Q250,30 300,22 T400,28 Q450,24 500,30 T600,22 Q650,28 700,24 T800,30 Q850,22 900,28 T1000,24 Q1050,30 1100,22 T1200,28 L1200,64 Z" fill="#F3EDE4"></path>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="4" id="testimonials" class="index-testimonials-section" data-layout-spec="בית-testimonials" dir="rtl">
+  <!-- Social proof strip -->
+  <div class="index-testimonials-section .testimonials-proof-strip">
+    <div class="testimonials-container">
+      <div class="proof-strip">
+        <div class="proof-item">
+          <span class="proof-stars">★★★★★</span>
+          <span class="proof-label">Google Reviews</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <i class="fa-brands fa-wolt proof-icon" aria-hidden="true"></i>
+          <span class="proof-label">מדורגים ב-Wolt</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <i class="fa-brands fa-instagram proof-icon" aria-hidden="true"></i>
+          <span class="proof-label">+12K עוקבים</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-number">4.9</span>
+          <span class="proof-label">דירוג ממוצע</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section header -->
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <span class="testimonials-eyebrow">מה הלקוחות אומרים</span>
+      <h2 class="testimonials-title">הם הזמינו פעם אחת.<br>עכשיו הם לא מפסיקים.</h2>
+      <p class="testimonials-subtitle">פיצה נפוליטנית אמיתית, בצק שנאפה ב-480 מעלות, וחוויה שגורמת לך לשלוח ווטסאפ לחברים — עוד לפני שסיימת לאכול.</p>
+    </div>
+
+    <!-- Mosaic grid -->
+    <div class="testimonials-mosaic">
+
+      <!-- Large anchor card (START side) -->
+      <article class="review-card review-card--large">
+        <div class="review-quote-mark" aria-hidden="true">“</div>
+        <div class="review-stars">★★★★★</div>
+        <blockquote class="review-text">"הבצק הזה שינה לי את ההגדרה של פיצה. קראנצ׳י מבחוץ, אוורירי מבפנים, עם בועות שרופות בדיוק בגודל הנכון. הבורטה על הביאנקה? פשוט פשע. הזמנתי שלוש פעמים בשבוע האחרון ואני לא מתנצל."</blockquote>
+        <footer class="review-footer">
+          <div class="reviewer-avatar" aria-hidden="true">נ</div>
+          <div class="reviewer-info">
+            <cite class="reviewer-name">נועם א׳</cite>
+            <span class="reviewer-meta">תל אביב · לקוח חוזר</span>
+          </div>
+          <div class="review-badge">✔ הזמנה מאומתת</div>
+        </footer>
+      </article>
+
+      <!-- Instagram food image tile -->
+      <div class="review-image-tile">
+        <img loading="lazy" decoding="async" data-placeholder="index-testimonials-image-1" data-context="Close-up overhead shot of a Neapolitan pizza just out of the oven — golden-charred crust with leopard spots, fresh burrata melting in the center, scattered basil leaves, and a drizzle of olive oil. Warm culinary lighting, rustic wooden board, Instagram-worthy food photography style. No pepperoni or meat toppings." width="340" height="340" src="/assets/site-index-testimonials-image-1.webp" alt="פיצה נפוליטנית עם בורטה טרייה מפיצאדלה">
+        <div class="image-tile-badge">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          <span>@_pizzadella_</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <article class="review-card review-card--medium">
+        <div class="review-quote-mark" aria-hidden="true">“</div>
+        <div class="review-stars">★★★★★</div>
+        <blockquote class="review-text">"האריזה הגיעה כאילו יצאה מצילום. הפיצה חמה, הקרטון יציב, ואפילו הרוטב לא זלג. פיצה משלוח שנראית כמו בפיצרייה — תופעה נדירה."</blockquote>
+        <footer class="review-footer">
+          <div class="reviewer-avatar" aria-hidden="true">מ</div>
+          <div class="reviewer-info">
+            <cite class="reviewer-name">מיה ל׳</cite>
+            <span class="reviewer-meta">אור עקיבא · Wolt</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="review-card review-card--medium">
+        <div class="review-quote-mark" aria-hidden="true">“</div>
+        <div class="review-stars">★★★★★</div>
+        <blockquote class="review-text">"הזמנתי דרך ווטסאפ וקיבלתי תוך 28 דקות. מהירות של אפליקציה, טעם של מסעדה. מי עוד עושה את זה?"</blockquote>
+        <footer class="review-footer">
+          <div class="reviewer-avatar" aria-hidden="true">א</div>
+          <div class="reviewer-info">
+            <cite class="reviewer-name">אורי ב׳</cite>
+            <span class="reviewer-meta">חדרה · WhatsApp</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="review-card review-card--small">
+        <div class="checkerboard-accent" aria-hidden="true"></div>
+        <div class="review-stars">★★★★★</div>
+        <blockquote class="review-text">"הפסטה עם עגבניות שרי ובזיליקום — לא ציפיתי שתגנוב לי את ההצגה מהפיצה. אכלתי את הכל בעמידה ליד הדלת."</blockquote>
+        <footer class="review-footer">
+          <div class="reviewer-avatar" aria-hidden="true">ש</div>
+          <div class="reviewer-info">
+            <cite class="reviewer-name">שני ר׳</cite>
+            <span class="reviewer-meta">בנימינה</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="review-card review-card--small review-card--accent">
+        <div class="review-stars">★★★★★</div>
+        <blockquote class="review-text">"הבאתי את פיצאדלה לאירוע משפחתי ל-30 איש. כולם שאלו מאיפה. שלחתי לינק לכולם."</blockquote>
+        <footer class="review-footer">
+          <div class="reviewer-avatar reviewer-avatar--light" aria-hidden="true">ד</div>
+          <div class="reviewer-info">
+            <cite class="reviewer-name reviewer-name--light">דנה כ׳</cite>
+            <span class="reviewer-meta reviewer-meta--light">קיסריה · קייטרינג</span>
+          </div>
+        </footer>
+      </article>
+
+    </div>
+    <!-- End mosaic -->
+
+    <!-- Bottom CTA strip -->
+    <div class="testimonials-cta-strip">
+      <span class="cta-strip-text">מצטרפים לאלפי לקוחות מרוצים</span>
+      <a href="https://wa.me/whatsapp_handle" class="btn-primary testimonials-cta-btn" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        הזמנה מהירה בווטסאפ
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom paper-rip divider -->
+  <div class="testimonials-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F3EDE4" stop-opacity="0"></stop>
+          <stop offset="60%" stop-color="#F3EDE4" stop-opacity="0.6"></stop>
+          <stop offset="100%" stop-color="#F3EDE4" stop-opacity="1"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,72 L0,32 Q30,28 60,34 T120,30 Q160,26 200,32 T270,28 Q310,24 360,30 T440,26 Q490,22 540,28 T620,24 Q670,20 720,26 T810,22 Q860,18 920,24 T1010,20 Q1060,16 1120,22 T1210,18 Q1280,14 1320,20 T1440,16 L1440,72 Z" fill="#201815"></path>
+      <rect x="0" y="0" width="1440" height="72" fill="url(#fadeGrad)"></rect>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="5" id="stats" class="index-stats-section" data-layout-spec="בית-stats" dir="rtl">
+  <div class="index-stats-grain"></div>
+  <div class="index-stats-container">
+    <div class="index-stats-header">
+      <h2 class="index-stats-title">המספרים מדברים בעד עצמם</h2>
+      <p class="index-stats-subtitle">שנים של אהבה לבצק, לטכניקה ולטעם האמיתי — כל ביס מספר את הסיפור</p>
+    </div>
+    <div class="index-stats-grid">
+      <div class="index-stats-card">
+        <div class="index-stats-number-wrap">
+          <span class="index-stats-number">7+</span>
+          <span class="index-stats-glow"></span>
+        </div>
+        <p class="index-stats-label">שנות מומחיות</p>
+        <p class="index-stats-desc">מאז שפתחנו, כל יום אנחנו מגלגלים בצק, מחדשים מתכונים ומשפרים את הטעם</p>
+      </div>
+      <div class="index-stats-card">
+        <div class="index-stats-number-wrap">
+          <span class="index-stats-number">30+</span>
+          <span class="index-stats-glow"></span>
+        </div>
+        <p class="index-stats-label">פיצות סיגנטורה</p>
+        <p class="index-stats-desc">תפריט עשיר של פיצות נפוליטניות אותנטיות — כל אחת שמה, כל אחת מיוחדת</p>
+      </div>
+      <div class="index-stats-card">
+        <div class="index-stats-number-wrap">
+          <span class="index-stats-number">92%</span>
+          <span class="index-stats-glow"></span>
+        </div>
+        <p class="index-stats-label">לקוחות חוזרים</p>
+        <p class="index-stats-desc">רוב הלקוחות שלנו הופכים לקבועים — כי פיצה אחת לא מספיקה</p>
+      </div>
+      <div class="index-stats-card">
+        <div class="index-stats-number-wrap">
+          <span class="index-stats-number">15K+</span>
+          <span class="index-stats-glow"></span>
+        </div>
+        <p class="index-stats-label">עוקבים ואוהבי פיצה</p>
+        <p class="index-stats-desc">קהילה חיה ברשתות שמשתפת, מגיבה ומזמינה — כי טעים חייבים לשתף</p>
+      </div>
+    </div>
+    <div class="index-stats-trust-bar">
+      <div class="index-stats-trust-item">
+        <i class="fa-solid fa-wheat-awn" aria-hidden="true"></i>
+        <span>בצק מוכן ביד מדי יום</span>
+      </div>
+      <div class="index-stats-trust-sep" aria-hidden="true"></div>
+      <div class="index-stats-trust-item">
+        <i class="fa-solid fa-motorcycle" aria-hidden="true"></i>
+        <span>משלוחים לאזורים נבחרים</span>
+      </div>
+      <div class="index-stats-trust-sep" aria-hidden="true"></div>
+      <div class="index-stats-trust-item">
+        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+        <span>קייטרינג לאירועים</span>
+      </div>
+      <div class="index-stats-trust-sep" aria-hidden="true"></div>
+      <div class="index-stats-trust-item">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        <span>מרכיבים פרימיום בלבד</span>
+      </div>
+    </div>
+  </div>
+  <div class="index-stats-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,28 L1200,0 L1200,80 Z" fill="#F3EDE4"></path>
+    </svg>
+  </div>
+</section>
+
+<section data-band-index="6" id="cta" class="index-cta-section" data-layout-spec="בית-cta" dir="rtl">
+  <!-- Checkerboard decorative strip -->
+  <div class="index-cta-checker-strip" aria-hidden="true">
+    <div class="index-cta-checker-inner"></div>
+  </div>
+
+  <div class="index-cta-container">
+    <!-- Messaging Block -->
+    <div class="index-cta-messaging">
+      <span class="index-cta-label">מוכנים להזמין?</span>
+      <h2 class="index-cta-heading">הפיצה הכי טובה<br>מגיעה אליכם</h2>
+
+      <!-- Checkerboard accent strip under title -->
+      <div class="index-cta-title-checker" aria-hidden="true">
+        <svg data-no-icon-edit="true" aria-hidden="true" width="120" height="16" viewBox="0 0 120 16" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="8" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="16" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="24" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="32" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="40" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="48" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="56" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="64" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="72" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="80" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="88" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="96" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="104" y="0" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="112" y="0" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="0" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="8" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="16" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="24" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="32" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="40" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="48" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="56" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="64" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="72" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="80" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="88" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="96" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+          <rect x="104" y="8" width="8" height="8" fill="#C33A43"></rect>
+          <rect x="112" y="8" width="8" height="8" fill="#F3EDE4"></rect>
+        </svg>
+      </div>
+
+      <p class="index-cta-body">פיצה נאפוליטנית אמיתית, בצק שמותח 48 שעות, תנור שרף ב-480 מעלות. זה לא סתם אוכל — זה חוויה שמגיעה אליכם חמה ישירות מהתנור.</p>
+
+      <div class="index-cta-buttons">
+        <a href="https://wolt.com" target="_blank" rel="noopener" class="index-cta-btn-wolt">
+          <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          הזמנה דרך Wolt
+        </a>
+        
+      </div>
+
+      <div class="index-cta-trust">
+        <div class="index-cta-trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>פיצה נאפוליטנית אותנטית</span>
+        </div>
+        <div class="index-cta-trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <span>משלוח מהיר עד הבית</span>
+        </div>
+        <div class="index-cta-trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>כשר ואיכותי</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form Block -->
+    <div class="index-cta-form-block">
+      <div class="index-cta-form-intro">
+        <p class="index-cta-form-intro-text">קייטרינג · אירועים פרטיים · פניות עסקיות</p>
+        <p class="index-cta-form-intro-sub">מארגנים אירוע? רוצים פיצה לכל הצוות? כתבו לנו ונחזור אליכם תוך שעה.</p>
+      </div>
+
+      <form class="contact-form index-cta-form" novalidate="">
+        <div class="index-cta-field-group">
+          <label class="index-cta-label-field" for="cta-name">שם מלא</label>
+          <input class="index-cta-input" type="text" id="cta-name" name="name" placeholder="ישראל ישראלי" required="">
+        </div>
+        <div class="index-cta-field-group">
+          <label class="index-cta-label-field" for="cta-email">אימייל</label>
+          <input class="index-cta-input" type="email" id="cta-email" name="email" placeholder="your@email.com" required="">
+        </div>
+        <div class="index-cta-field-group">
+          <label class="index-cta-label-field" for="cta-phone">טלפון</label>
+          <input class="index-cta-input" type="tel" id="cta-phone" name="phone" placeholder="050-000-0000">
+        </div>
+        <div class="index-cta-field-group">
+          <label class="index-cta-label-field" for="cta-message">הודעה</label>
+          <textarea class="index-cta-input index-cta-textarea" id="cta-message" name="message" placeholder="ספרו לנו על האירוע שלכם..." rows="4"></textarea>
+        </div>
+        <div class="privacy-consent">
+          <label class="privacy-consent-label">
+            <input type="checkbox" name="privacy_consent" class="privacy-consent-checkbox" required="">
+            <span>קראתי ואני מסכים/ה ל<a href="/terms" target="_blank">תנאי השימוש</a> ול<a href="/privacy" target="_blank">מדיניות הפרטיות</a></span>
+          </label>
+        </div>
+        <button type="submit" class="index-cta-submit">
+          שלחו הודעה
+          <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer" dir="rtl" aria-label="כותרת תחתונה של האתר">
+  <div class="footer-top">
+    <div class="footer-container">
+
+      <!-- Column 1: Company Info -->
+      <div class="footer-col footer-brand">
+        <img src="/assets/restaurant-logo.webp" alt="פיצאדלה" class="logo">
+        <p class="footer-tagline">פיצה אמיתית. טעם שנשאר.<br>מחוברים לאוכל, לאנשים, לרגע.</p>
+        <div class="footer-badge">
+          <span class="badge-icon"><i class="fas fa-fire"></i></span>
+          <span>טרי מהתנור — כל יום</span>
+        </div>
+        <div class="social-links" aria-label="רשתות חברתיות">
+          
+          
+          
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col footer-links">
+        <h3 class="footer-heading">ניווט מהיר</h3>
+        <ul class="footer-nav">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#deals">Deals</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#stats">Stats</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div class="footer-col footer-contact-col">
+        <h3 class="footer-heading">צור קשר</h3>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+            <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span>
+          </li>
+          <li>
+            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+            <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span>
+          </li>
+          <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="contact-text">[business_address]</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Hours -->
+      <div class="footer-col footer-hours">
+        <h3 class="footer-heading">שעות פעילות</h3>
+        <ul class="hours-list">
+          <li><a href="/"><span class="day">ראשון – חמישי</span><span class="time">12:00 – 23:00</span></a></li>
+          <li><a href="/"><span class="day">שישי</span><span class="time">11:00 – 16:00</span></a></li>
+          <li><a href="/"><span class="day">שבת</span><span class="time">20:00 – 23:30</span></a></li>
+        </ul>
+        <div class="footer-badge hours-badge">
+          <span class="badge-icon"><i class="fas fa-motorcycle"></i></span>
+          <span>משלוחים זמינים</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-container footer-bottom-inner">
+      <p class="footer-copyright">© 2026 פיצאדלה. כל הזכויות שמורות.</p>
+      <div class="footer-legal">
+        <a href="/privacy">מדיניות פרטיות</a>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <a href="/terms">תנאי שימוש</a>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <a href="/accessibility">נגישות</a>
+        <span class="legal-sep" aria-hidden="true">·</span>
+        <a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+
+    <script id="zappy-navbar-scroll-effect">
+    (function(){
+      var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');
+      var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');
+      if(!nb)return;
+      var fb='rgba(243,237,228,0.85)';
+      var th=60;
+      var rs=getComputedStyle(document.documentElement);
+      var td=rs.getPropertyValue('--text-dark').trim()||'#1a1a1a';
+      var tl=rs.getPropertyValue('--text-light').trim()||'#ffffff';
+      var st=true?td:tl;
+      nb.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease,box-shadow 0.3s ease';
+      if(cm)cm.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease';
+      var neSel='a,.navbar-brand,.navbar-brand a,.dropdown-toggle,.mobile-toggle,.phone-header-btn,.mobile-hamburger-btn,.mobile-close-btn,.mobile-submenu-toggle,.nav-link';
+      var skipCls=['cart-link','login-link','nav-search-toggle','search-toggle'];
+      function sTC(c,clr){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){var sk=false;if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu')){sk=true;}for(var j=0;j<skipCls.length;j++){if(els[i].classList.contains(skipCls[j])){sk=true;break;}}if(!sk)els[i].style.setProperty('color',clr,'important');}}
+      function cTC(c){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu'))continue;els[i].style.removeProperty('color');}}
+      function applyScrolled(){
+        nb.classList.add('scrolled');
+        if(window.innerWidth>768){
+          nb.style.setProperty('--frosted-text',st);
+          nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('background-color',fb,'important');
+          nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+        }
+        if(cm){cm.classList.add('scrolled');if(window.innerWidth>768){cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}}
+      }
+      function onS(){
+        if(window._zappyNavNoDarkHero) return;
+        if(window.innerWidth<=768){nb.classList.remove('scrolled');cTC(nb);if(cm){cm.classList.remove('scrolled');cTC(cm);}return;}
+        var y=window.scrollY||window.pageYOffset;
+        if(y>th){
+          nb.classList.add('scrolled');nb.style.setProperty('background-color',fb,'important');nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('--frosted-text',st);nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+          if(cm){cm.classList.add('scrolled');cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}
+        }else{
+          nb.classList.remove('scrolled');nb.style.setProperty('background-color','transparent','important');nb.style.removeProperty('background-image');
+          nb.style.removeProperty('--frosted-text');nb.style.backdropFilter='none';nb.style.webkitBackdropFilter='none';nb.style.boxShadow='none';
+          cTC(nb);
+          if(cm){cm.classList.remove('scrolled');cm.style.setProperty('background','transparent','important');cm.style.setProperty('backdrop-filter','none','important');cm.style.setProperty('-webkit-backdrop-filter','none','important');cTC(cm);}
+        }
+      }
+      function sLum(rv,gv,bv){rv/=255;gv/=255;bv/=255;rv=rv<=0.03928?rv/12.92:Math.pow((rv+0.055)/1.055,2.4);gv=gv<=0.03928?gv/12.92:Math.pow((gv+0.055)/1.055,2.4);bv=bv<=0.03928?bv/12.92:Math.pow((bv+0.055)/1.055,2.4);return 0.2126*rv+0.7152*gv+0.0722*bv;}
+      window.addEventListener('scroll',onS,{passive:true});
+      window.addEventListener('resize',onS,{passive:true});
+      onS();
+      var heroEl=document.querySelector('section[class*="hero"],[data-hero-type],main>section:first-child');
+      var hasDH=false;
+      if(heroEl){var hCs=getComputedStyle(heroEl);var hBI=hCs.backgroundImage;if(hBI&&hBI!=='none'){if(hBI.indexOf('url(')!==-1){var hM2=hCs.backgroundColor.match(/\d+/g);if(hM2&&hM2.length>=3){hasDH=sLum(parseInt(hM2[0]),parseInt(hM2[1]),parseInt(hM2[2]))<0.4;}else{hasDH=true;}}else if(hBI.indexOf('gradient')!==-1){var cM=hBI.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g);if(cM&&cM.length>0){var tLm=0;for(var ci=0;ci<cM.length;ci++){var pts=cM[ci].match(/\d+/g);tLm+=sLum(parseInt(pts[0]),parseInt(pts[1]),parseInt(pts[2]));}hasDH=(tLm/cM.length)<0.4;}else{hasDH=true;}}else{hasDH=true;}}else{var hM=hCs.backgroundColor.match(/\d+/g);if(hM&&hM.length>=3){hasDH=sLum(parseInt(hM[0]),parseInt(hM[1]),parseInt(hM[2]))<0.4;}}}
+      if(!hasDH){window.removeEventListener('scroll',onS);window.removeEventListener('resize',onS);applyScrolled();window._zappyNavNoDarkHero=true;}
+    })();
+    </script>
+</body>
+</html>

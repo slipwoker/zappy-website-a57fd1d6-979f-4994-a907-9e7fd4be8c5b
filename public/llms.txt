@@ -1,0 +1,67 @@
+# פיצאדלה — Generative Engine Optimization Map
+
+> Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends Italian culinary heritage with a modern Israeli identity, targeting a young, trendy, Instagram-savvy audience. The visual language is warm yet luxurious — deep burgundy (#C33A43) on a light cream background (#F8F8F8), with Italian checkerboard motifs, soft shadows, and warm culinary lighting. The brand aims to evoke an immediate craving through a premium, fast, app-like digital experience focused on driving online orders via Wolt and WhatsApp, with sharp Hebrew copywriting that feels authentic, witty, and appetite-inducing.
+
+---
+
+## Pages
+
+### בית
+https://-a57fd1d6.zappy5.app
+Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends I
+
+## Legal & Policy
+
+### Privacy Policy
+https://-a57fd1d6.zappy5.app/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://-a57fd1d6.zappy5.app/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://-a57fd1d6.zappy5.app/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://-a57fd1d6.zappy5.app
+- Endpoint: https://-a57fd1d6.zappy5.app/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel)
+  - `message` (textarea)
+  - `privacy_consent` (checkbox, required)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About פיצאדלה
+Pizzadella is an Israeli-Italian boutique pizzeria brand specializing in authentic Neapolitan-style pizzas (no pepperoni/bacon/meat visuals). The brand blends Italian culinary heritage with a modern Israeli identity, targeting a young, trendy, Instagram-savvy audience. The visual language is warm yet luxurious — deep burgundy (#C33A43) on a light cream background (#F8F8F8), with Italian checkerboard motifs, soft shadows, and warm culinary lighting. The brand aims to evoke an immediate craving through a premium, fast, app-like digital experience focused on driving online orders via Wolt and WhatsApp, with sharp Hebrew copywriting that feels authentic, witty, and appetite-inducing.
+
+## Target Audience
+- קהל צעיר, טרנדי, חובבי אוכל איכותי, משתמשי אינסטגרם, מזמיני משלוחים
+- משפיענים צעירים חובבי אוכל
+- מזמיני משלוחים טכנולוגיים
+- צעירים עירוניים טרנדיים
+
+## Industry
+Restaurant
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://-a57fd1d6.zappy5.app/sitemap.xml
+- Robots: https://-a57fd1d6.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://-a57fd1d6.zappy5.app/llms-full.txt
