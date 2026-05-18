@@ -1266,6 +1266,342 @@
 }
 
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-story-section {
+  position: relative;
+  overflow: visible;
+  background-color: var(--bg-light);
+  background-image: repeating-linear-gradient(45deg, rgba(195,58,67,0.03) 0px, rgba(195,58,67,0.03) 10px, transparent 10px, transparent 20px);
+  color: var(--text-dark);
+  padding: 90px 24px 80px;
+  direction: rtl;
+}
+
+/* Checker decoration top-left (in RTL context = top-start) */
+.index-story-section .story-checker-decor {
+  position: absolute;
+  top: 40px;
+  inset-inline-start: 40px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main container */
+.index-story-section .story-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 64px;
+  align-items: start;
+  direction: rtl;
+}
+
+/* ===== LEFT TEXT COLUMN ===== */
+.index-story-section .story-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: right;
+}
+
+.index-story-section .story-eyebrow {
+  display: inline-block;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 14px;
+  padding-inline-end: 0;
+  position: relative;
+}
+
+.index-story-section .story-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  vertical-align: middle;
+  margin-inline-end: 10px;
+}
+
+.index-story-section .story-headline {
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
+  text-align: right;
+}
+
+.index-story-section .story-headline-accent {
+  color: var(--primary);
+  -webkit-text-fill-color: var(--primary);
+}
+
+.index-story-section .story-lead {
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.75;
+  color: var(--text-dark);
+  margin: 20px 0 16px 0;
+  padding-inline-start: 16px;
+  border-inline-start: 3px solid var(--primary);
+  text-align: right;
+}
+
+.index-story-section .story-body {
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 36px 0;
+  text-align: right;
+}
+
+/* ===== VALUE PROPOSITIONS LIST ===== */
+.index-story-section .story-values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.index-story-section .story-value-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
+  direction: rtl;
+}
+
+.index-story-section .story-value-item:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.index-story-section .story-value-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--bg-light);
+  border: 1.5px solid var(--border-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(195,58,67,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.index-story-section .story-value-item:hover .story-value-icon-wrap {
+  background: rgba(195,58,67,0.07);
+  box-shadow: 0 4px 16px rgba(195,58,67,0.15);
+}
+
+.index-story-section .story-value-content {
+  text-align: right;
+}
+
+.index-story-section .story-value-title {
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.index-story-section .story-value-desc {
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ===== RIGHT IMAGE COLUMN ===== */
+.index-story-section .story-image-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.index-story-section .story-image-primary-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  z-index: 2;
+}
+
+.index-story-section .story-image-primary {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 16px 56px rgba(32,24,21,0.22);
+  display: block;
+}
+
+/* Stamp badge overlay */
+.index-story-section .story-stamp-badge {
+  position: absolute;
+  bottom: -20px;
+  inset-inline-start: -20px;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(32,24,21,0.35));
+}
+
+/* Secondary image */
+.index-story-section .story-image-secondary-wrap {
+  position: relative;
+  width: 240px;
+  margin-top: -60px;
+  margin-inline-end: 0;
+  inset-inline-start: -30px;
+  align-self: flex-start;
+  z-index: 3;
+}
+
+.index-story-section .story-image-secondary {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(32,24,21,0.18);
+  display: block;
+  border: 4px solid var(--bg-light);
+}
+
+.index-story-section .story-secondary-label {
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 12px;
+  background: var(--primary);
+  color: var(--text-light);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* ===== BOTTOM DIVIDER ===== */
+.index-story-section .story-bottom-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-story-section .story-bottom-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .index-story-section .story-container {
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+  }
+
+  .index-story-section .story-image-primary {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-story-section {
+    padding: 60px 16px 80px;
+  }
+
+  .index-story-section .story-checker-decor {
+    top: 20px;
+    inset-inline-start: 16px;
+    opacity: 0.12;
+  }
+
+  .index-story-section .story-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .index-story-section .story-image-col {
+    
+    align-items: center;
+  }
+
+  .index-story-section .story-image-primary-wrap {
+    max-width: 100%;
+  }
+
+  .index-story-section .story-image-primary {
+    height: 320px;
+    border-radius: 16px;
+  }
+
+  .index-story-section .story-stamp-badge {
+    inset-inline-start: 8px;
+    bottom: -16px;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+  }
+
+  .index-story-section .story-image-secondary-wrap {
+    position: static;
+    width: 160px;
+    margin-top: -50px;
+    margin-inline-start: auto;
+    margin-inline-end: 16px;
+    align-self: flex-end;
+  }
+
+  .index-story-section .story-image-secondary {
+    width: 160px;
+    height: 160px;
+  }
+
+  .index-story-section .story-headline {
+    font-size: 2.6rem;
+  }
+
+  .index-story-section .story-value-item {
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+  }
+
+  .index-story-section .story-value-icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_RTL_ORDER:בית-story — stripped 1 order declaration(s) conflicting with RTL grid */
+
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -1908,7 +2244,7 @@
   <!-- Bottom Wave Divider -->
   <div class="index-hero-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,70 L0,38 Q100,22 200,35 T400,28 Q500,20 600,32 T800,26 Q900,18 1000,30 T1200,24 L1200,70 Z" fill="#1A0A08"></path>
+      <path d="M0,70 L0,38 Q100,22 200,35 T400,28 Q500,20 600,32 T800,26 Q900,18 1000,30 T1200,24 L1200,70 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
@@ -2128,126 +2464,128 @@
 
 
 
-<section data-band-index="3" id="story" class="index-story-section" data-layout-spec="בית-story" dir="rtl">
-  <!-- Subtle paper texture overlay -->
-  <div class="index-story-texture" aria-hidden="true"></div>
+<section class="index-story-section" data-layout-spec="בית-story" dir="rtl" data-zappy-section="true" id="story">
+  <!-- Decorative checker pattern top-right -->
+  <div class="story-checker-decor" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="20" y="0" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="40" y="0" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="60" y="0" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="10" y="10" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="30" y="10" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="50" y="10" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="70" y="10" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="0" y="20" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="20" y="20" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="40" y="20" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="60" y="20" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="10" y="30" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="30" y="30" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="50" y="30" width="10" height="10" fill="#C33A43"></rect>
+      <rect x="70" y="30" width="10" height="10" fill="#C33A43"></rect>
+    </svg>
+  </div>
 
-  <div class="index-story-container">
-    <!-- Content Column (START = RIGHT in RTL) -->
-    <div class="index-story-content">
-      <!-- Checkerboard accent -->
-      <div class="index-story-checker" aria-hidden="true">
-        <svg data-no-icon-edit="true" aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="12" y="0" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="24" y="0" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="36" y="0" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="0" y="12" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="12" y="12" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="24" y="12" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="36" y="12" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="0" y="24" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="12" y="24" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="24" y="24" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="36" y="24" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="0" y="36" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="12" y="36" width="12" height="12" fill="var(--primary)"></rect>
-          <rect x="24" y="36" width="12" height="12" fill="var(--bg-light)"></rect>
-          <rect x="36" y="36" width="12" height="12" fill="var(--primary)"></rect>
-        </svg>
-      </div>
+  <div class="story-container">
+    <!-- LEFT: Text Content -->
+    <div class="story-text-col">
+      <span class="story-eyebrow">הסיפור שלנו</span>
 
-      <p class="index-story-label">הסיפור שלנו</p>
-      <h2 class="index-story-heading">פיצה שנולדה
-מאהבה אמיתית</h2>
-      <p class="index-story-lead">פיצאדלה היא לא עוד פיצרייה — היא תפיסת עולם. שילוב של מסורת נפוליטנית עתיקה עם הרוח הישראלית החמה, בפיצרייה בוטיק שיודעת בדיוק מה היא עושה.</p>
-      <p class="index-story-body">כל פיצה שיוצאת מהתנור שלנו עברה תהליך של 48 שעות התפחה, עם קמח איטלקי מובחר, עגבניות סן מרצאנו אמיתיות, ומוצרלה טרייה שמגיעה ישירות מהמקור. זו לא רק אוכל — זו חוויה שמתחילה מהריח ומסתיימת בחיוך.</p>
+      <h2 class="story-headline">
+        פיצה שנולדה<br>
+        <span class="story-headline-accent">מאהבה אמיתית</span>
+      </h2>
 
-      <!-- Value Points -->
-      <ul class="index-story-values">
-        <li class="index-story-value-item">
-          <div class="index-story-value-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="12" stroke="var(--primary)" stroke-width="1.5" fill="none"></circle>
-              <path d="M8 14 C8 10 11 7 14 7 C17 7 20 10 20 14 C20 18 17 21 14 21 C11 21 8 18 8 14Z" stroke="var(--primary)" stroke-width="1.5" fill="none"></path>
-              <path d="M14 7 C12 11 12 17 14 21" stroke="var(--primary)" stroke-width="1" fill="none"></path>
-              <path d="M8 14 L20 14" stroke="var(--primary)" stroke-width="1" fill="none"></path>
+      <p class="story-lead">
+        פיצאדלה היא לא עוד פיצרייה — היא תפיסת עולם. שילוב של מסורת נפוליטנית עתיקה עם הרוח הישראלית החמה, בפיצרייה בוטיק שיודעת בדיוק מה היא עושה.
+      </p>
+
+      <p class="story-body">
+        כל פיצה שיוצאת מהתנור שלנו עברה תהליך של 48 שעות התפחה, עם קמח איטלקי מובחר, עגבניות סן מרצאנו אמיתיות, ומוצרלה טרייה שמגיעה ישירות מהמקור. זו לא רק אוכל — זו חוויה שמתחילה מהריח ומסתיימת בחיוך.
+      </p>
+
+      <!-- Value Propositions -->
+      <ul class="story-values-list">
+        <li class="story-value-item">
+          <div class="story-value-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
           </div>
-          <div class="index-story-value-content">
-            <h3 class="index-story-value-title">בצק שמתבגר יפה</h3>
-            <p class="index-story-value-desc">48 שעות התפחה איטית מייצרות בצק אוורירי, קריספי מבחוץ ורך מבפנים — בדיוק כמו שצריך להיות.</p>
+          <div class="story-value-content">
+            <h3 class="story-value-title">בצק שמתבגר יפה</h3>
+            <p class="story-value-desc">48 שעות התפחה איטית מייצרות בצק אוורירי, קריספי מבחוץ ורך מבפנים — בדיוק כמו שצריך להיות.</p>
           </div>
         </li>
-        <li class="index-story-value-item">
-          <div class="index-story-value-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 4 C14 4 10 8 10 12 C10 15.3 11.8 17.5 14 18 C16.2 17.5 18 15.3 18 12 C18 8 14 4 14 4Z" stroke="var(--accent)" stroke-width="1.5" fill="rgba(149,180,106,0.15)"></path>
-              <path d="M14 18 L14 24" stroke="var(--accent)" stroke-width="1.5"></path>
-              <path d="M10 22 C11.5 21 14 21 14 24" stroke="var(--accent)" stroke-width="1.2" fill="none"></path>
-              <path d="M18 20 C16.5 19.5 14 20 14 22" stroke="var(--accent)" stroke-width="1.2" fill="none"></path>
+
+        <li class="story-value-item">
+          <div class="story-value-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M9 12l2 2 4-4"></path>
             </svg>
           </div>
-          <div class="index-story-value-content">
-            <h3 class="index-story-value-title">מרכיבים שמדברים בעד עצמם</h3>
-            <p class="index-story-value-desc">עגבניות סן מרצאנו, מוצרלה פיור די לאטה, שמן זית כתית מעולה — כי אוכל טוב מתחיל בחומרי גלם יוצאי דופן.</p>
+          <div class="story-value-content">
+            <h3 class="story-value-title">מרכיבים שמדברים בעד עצמם</h3>
+            <p class="story-value-desc">עגבניות סן מרצאנו, מוצרלה פיור די לאטה, שמן זית כתית מעולה — כי אוכל טוב מתחיל בחומרי גלם יוצאי דופן.</p>
           </div>
         </li>
-        <li class="index-story-value-item">
-          <div class="index-story-value-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="8" width="20" height="14" rx="3" stroke="var(--secondary)" stroke-width="1.5" fill="none"></rect>
-              <path d="M9 8 L9 6 C9 5 10 4 14 4 C18 4 19 5 19 6 L19 8" stroke="var(--secondary)" stroke-width="1.5" fill="none"></path>
-              <path d="M10 15 L13 18 L18 12" stroke="var(--secondary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+
+        <li class="story-value-item">
+          <div class="story-value-icon-wrap">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+              <path d="M16 8h4l3 3v5h-7V8z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
             </svg>
           </div>
-          <div class="index-story-value-content">
-            <h3 class="index-story-value-title">טרי, מהיר, עד הבית</h3>
-            <p class="index-story-value-desc">פיצה שיוצאת מהתנור ישירות לדלת שלך — בלי פשרות על טריות, בלי המתנה אינסופית. אוכל איטלקי אמיתי, משלוחי אוכל אור עקיבא במהירות הבזק.</p>
+          <div class="story-value-content">
+            <h3 class="story-value-title">טרי, מהיר, עד הבית</h3>
+            <p class="story-value-desc">פיצה שיוצאת מהתנור ישירות לדלת שלך — בלי פשרות על טריות, בלי המתנה אינסופית. אוכל איטלקי אמיתי, משלוחי אוכל אור עקיבא במהירות הבזק.</p>
           </div>
         </li>
       </ul>
     </div>
 
-    <!-- Imagery Column (END = LEFT in RTL) -->
-    <div class="index-story-imagery">
-      <div class="index-story-img-primary-wrap">
-        <img loading="lazy" decoding="async" data-placeholder="index-story-image-1" data-context="Close-up editorial photograph of a freshly baked Neapolitan pizza on a wooden peel, shot from above at a slight angle. The pizza has a beautifully charred puffy crust (cornicione), vibrant San Marzano tomato sauce, melted fior di latte mozzarella, fresh basil leaves, and a drizzle of olive oil. Warm golden culinary lighting, artisan Italian pizzeria aesthetic, no meat toppings. Premium food photography style." width="560" height="680" src="/assets/site-index-story-image-1.webp" alt="פיצה נפוליטנית טרייה מהתנור של פיצאדלה" class="index-story-img-primary">
-        <!-- Decorative stamp badge -->
-        <div class="index-story-stamp" aria-hidden="true">
-          <svg data-no-icon-edit="true" aria-hidden="true" width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="48" cy="48" r="44" fill="var(--bg-dark)" stroke="var(--primary)" stroke-width="2"></circle>
-            <circle cx="48" cy="48" r="36" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="3 3"></circle>
-            <path id="story-stamp-arc" d="M 16,48 A 32,32 0 1,1 80,48" fill="none"></path>
-            <text font-size="7.5" fill="var(--text-light)" font-family="Heebo, sans-serif" font-weight="700" letter-spacing="2">
-              <textPath href="#story-stamp-arc">• נפוליטנית אמיתית • מאפייה בוטיק •</textPath>
+    <!-- RIGHT: Image Collage -->
+    <div class="story-image-col">
+      <div class="story-image-primary-wrap">
+        <img alt="פיצה נפוליטנית טרייה מהתנור של פיצאדלה" class="story-image-primary" src="/assets/site-index-story-image-1.webp" data-placeholder="index-story-image-1" data-context="Close-up editorial photograph of a freshly baked Neapolitan pizza on a wooden peel, shot from above at a slight angle. The pizza has a beautifully charred puffy crust (cornicione), vibrant San Marzano tomato sauce, melted fior di latte mozzarella, fresh basil leaves, and a drizzle of olive oil. Warm golden culinary lighting, artisan Italian pizzeria aesthetic, no meat toppings. Premium food photography style." style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+        <!-- Italian Stamp Badge -->
+        <div class="story-stamp-badge" aria-hidden="true">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="55" r="50" fill="#201815" stroke="#C33A43" stroke-width="2.5"></circle>
+            <circle cx="55" cy="55" r="43" fill="none" stroke="#C33A43" stroke-width="1" stroke-dasharray="4 3"></circle>
+            <text font-family="'Bebas Neue', sans-serif" font-size="9" fill="#F8F8F8" letter-spacing="3">
+              <textPath href="#stampCircle">&nbsp;&nbsp;&nbsp;480° GRADI &nbsp;&nbsp;&nbsp;&nbsp; NAPOLI &nbsp;&nbsp;&nbsp;&nbsp; PIZZADELLA</textPath>
             </text>
-            <text x="48" y="44" text-anchor="middle" font-size="11" fill="var(--primary)" font-family="Bebas Neue, sans-serif" letter-spacing="1">480°</text>
-            <text x="48" y="56" text-anchor="middle" font-size="7" fill="var(--text-light)" font-family="Heebo, sans-serif" letter-spacing="1.5">GRADI</text>
+            <defs>
+              <path id="stampCircle" d="M55,55 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"></path>
+            </defs>
+            <text x="55" y="48" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="22" fill="#C33A43" letter-spacing="1">480°</text>
+            <text x="55" y="66" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#F8F8F8" letter-spacing="2">GRADI</text>
+            <path d="M38,72 Q55,80 72,72" fill="none" stroke="#C33A43" stroke-width="1"></path>
           </svg>
         </div>
       </div>
 
-      <!-- Secondary peeking tile -->
-      <div class="index-story-img-secondary-wrap">
-        <img loading="lazy" decoding="async" data-placeholder="index-story-image-2" data-context="Overhead flat-lay of Italian pizza-making ingredients arranged artfully on a rustic marble surface: a small bowl of San Marzano tomato sauce, fresh mozzarella balls, green basil leaves, olive oil bottle, scattered flour, and a small dish of sea salt. Warm natural lighting, editorial food styling, Italian culinary aesthetic, no meat." width="280" height="280" src="/assets/site-index-story-image-2.webp" alt="מרכיבים איטלקיים איכותיים של פיצאדלה" class="index-story-img-secondary">
+      <!-- Secondary image overlapping bottom-right -->
+      <div class="story-image-secondary-wrap">
+        <img alt="מרכיבים איטלקיים איכותיים של פיצאדלה" class="story-image-secondary" src="/assets/site-index-story-image-2.webp" data-placeholder="index-story-image-2" data-context="Overhead flat-lay of Italian pizza-making ingredients arranged artfully on a rustic marble surface: a small bowl of San Marzano tomato sauce, fresh mozzarella balls, green basil leaves, olive oil bottle, scattered flour, and a small dish of sea salt. Warm natural lighting, editorial food styling, Italian culinary aesthetic, no meat." style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div class="story-secondary-label" aria-hidden="true">SINCE 2020</div>
       </div>
     </div>
   </div>
 
-  <!-- Bottom checkerboard divider band -->
-  <div class="index-story-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="checker-divider" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-          <rect x="0" y="0" width="16" height="16" fill="rgba(195,58,67,0.18)"></rect>
-          <rect x="16" y="16" width="16" height="16" fill="rgba(195,58,67,0.18)"></rect>
-          <rect x="16" y="0" width="16" height="16" fill="transparent"></rect>
-          <rect x="0" y="16" width="16" height="16" fill="transparent"></rect>
-        </pattern>
-      </defs>
-      <rect x="0" y="0" width="1200" height="64" fill="url(#checker-divider)"></rect>
-      <path d="M0,64 L0,28 Q50,22 100,30 T200,26 Q250,30 300,22 T400,28 Q450,24 500,30 T600,22 Q650,28 700,24 T800,30 Q850,22 900,28 T1000,24 Q1050,30 1100,22 T1200,28 L1200,64 Z" fill="#F3EDE4"></path>
+  <!-- Bottom checker divider -->
+  <div class="story-bottom-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,30 Q100,20 200,30 T400,25 Q500,30 600,20 T800,28 Q900,22 1000,30 T1200,25 L1200,60 Z" fill="#F3EDE4"></path>
     </svg>
   </div>
 </section>
